@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniNotes - Ahmed Mohamed</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/project-detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">
+                <img src="1.png" alt="Logo" class="logo-img">
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="projects.html" class="active">Projects</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="project-detail">
+        <div class="project-header">
+            <h1>UniNotes</h1>
+            <p class="project-description">A comprehensive study materials collection app specifically designed for Computer and Information Science students at Ain Shams University</p>
+            <a href="https://play.google.com/store/apps/details?id=com.uninotes.app" target="_blank" class="store-link">
+                <i class="fab fa-google-play"></i>
+                Download on Google Play
+            </a>
+        </div>
+
+        <section class="version-section">
+            <h2>App Versions</h2>
+            <div class="version-selector">
+                <button class="version-btn active" data-version="new">New Version</button>
+                <button class="version-btn" data-version="old">Original Version</button>
+            </div>
+            <div class="version-container">
+                <button class="nav-btn prev-btn" id="versionPrevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="version-gallery" id="versionGallery">
+                    <!-- Version images will be loaded here -->
+                </div>
+                <button class="nav-btn next-btn" id="versionNextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-book"></i>
+                    <h3>Note Taking</h3>
+                    <p>Organize and manage your study materials efficiently</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-search"></i>
+                    <h3>Quick Search</h3>
+                    <p>Find your notes and resources instantly</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-share-alt"></i>
+                    <h3>Sharing</h3>
+                    <p>Share notes and resources with classmates</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Cloud Sync</h3>
+                    <p>Access your notes across all devices</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Ahmed Mohamed. All rights reserved.</p>
+    </footer>
+
+    <style>
+        .version-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        .nav-btn {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            z-index: 2;
+        }
+        .nav-btn:hover {
+            background: var(--accent-color-hover);
+        }
+        .version-gallery {
+            display: flex;
+            gap: 1rem;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            padding: 1rem 0;
+            width: 100%;
+        }
+        .version-gallery img {
+            width: 340px;
+            height: 340px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .version-gallery img:hover {
+            width: 350px;
+            height: 350px;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+
+    <script>
+        // Version switching functionality
+        const versionButtons = document.querySelectorAll('.version-btn');
+        const versionGallery = document.getElementById('versionGallery');
+        let currentVersion = 'new';
+
+        // Function to load images from a directory
+        async function loadImages(directory, container) {
+            try {
+                let images;
+                if (directory === 'UNI notes') {
+                    // New version: (1).png to (39).png
+                    images = Array.from({length: 39}, (_, i) => `(${i + 1}).png`);
+                } else {
+                    // Old version: (37).png to (73).png
+                    images = Array.from({length: 37}, (_, i) => `(${i + 37}).png`);
+                }
+                
+                container.innerHTML = '';
+                images.forEach(name => {
+                    const img = document.createElement('img');
+                    img.src = `${directory}/${name}`;
+                    img.alt = 'App screenshot';
+                    container.appendChild(img);
+                });
+            } catch (error) {
+                console.error('Error loading images:', error);
+            }
+        }
+
+        // Navigation functionality
+        function setupNavigation(container, prevBtn, nextBtn) {
+            const scrollAmount = 340 + 16; // image width + gap
+            prevBtn.addEventListener('click', () => {
+                container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+            nextBtn.addEventListener('click', () => {
+                container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
+        }
+
+        versionButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                versionButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                currentVersion = button.dataset.version;
+                const directory = currentVersion === 'new' ? 'UNI notes' : 'Uni notes old';
+                loadImages(directory, versionGallery);
+            });
+        });
+
+        // Initial load and setup
+        document.addEventListener('DOMContentLoaded', () => {
+            loadImages('UNI notes', versionGallery);
+            setupNavigation(
+                versionGallery,
+                document.getElementById('versionPrevBtn'),
+                document.getElementById('versionNextBtn')
+            );
+        });
+    </script>
+</body>
+</html> 
