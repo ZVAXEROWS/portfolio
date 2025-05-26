@@ -46,9 +46,9 @@
         <section class="themes-section">
             <h2>Theme Variations</h2>
             <div class="theme-selector">
-                <button class="theme-btn active" data-theme="blue">Blue Theme</button>
-                <button class="theme-btn" data-theme="dark">Dark Theme</button>
-                <button class="theme-btn" data-theme="light">Light Theme</button>
+                <button class="theme-btn active" data-theme="Blue">Blue Theme</button>
+                <button class="theme-btn" data-theme="Dark">Dark Theme</button>
+                <button class="theme-btn" data-theme="Light">Light Theme</button>
             </div>
             <div class="theme-container">
                 <button class="nav-btn prev-btn" id="themePrevBtn">
@@ -160,7 +160,7 @@
         // Theme switching functionality
         const themeButtons = document.querySelectorAll('.theme-btn');
         const themeGallery = document.getElementById('themeGallery');
-        let currentTheme = 'blue';
+        let currentTheme = 'Blue';
 
         themeButtons.forEach(button => {
             button.addEventListener('click', () => {
@@ -174,7 +174,7 @@
         // Initial load and setup
         document.addEventListener('DOMContentLoaded', () => {
             loadImages('Money insights/wireframing', document.getElementById('wireframesContainer'));
-            loadImages('Money insights/blue', themeGallery);
+            loadImages('Money insights/Blue', themeGallery);
             
             setupNavigation(
                 document.getElementById('wireframesContainer'),
