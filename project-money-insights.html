@@ -131,7 +131,7 @@
                 }
                 // For themes
                 else {
-                    const theme = directory.split('/').pop();
+                    const theme = directory.split('/').pop().toLowerCase();
                     const images = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png'];
                     container.innerHTML = '';
                     images.forEach(name => {
