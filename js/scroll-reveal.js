@@ -2,7 +2,7 @@
  * scroll-reveal.js
  * Premium GSAP scroll animations:
  *   1. Pinned layer stacking transition (#skills → #projects)
- *   2. Horizontal scroll for projects (Zajno style pin & scrub to the last project)
+ *   2. Horizontal scroll for projects (Dev mode: 8 projects horizontal pin & scrub)
  *   3. Heading parallax (foreground/background depth)
  *   4. Fade-up for [data-reveal] elements
  *
@@ -107,7 +107,6 @@
     if (!skillsSec || !projectsSec) return;
 
     // Pin the skills section in place as the user scrolls past it
-    // pinSpacing: false allows the incoming projects section to slide up directly over it
     skillsPinTrigger = ScrollTrigger.create({
       trigger: skillsSec,
       start: 'top top',
@@ -137,7 +136,7 @@
     }
   }
 
-  // ── 4. Horizontal scroll for projects (Zajno Pin & Scrub) ──
+  // ── 4. Horizontal scroll for projects (Dev Mode: 8 Projects Pin & Scrub) ──
   let horizontalTween = null;
   let horizontalTrigger = null;
 
@@ -159,7 +158,11 @@
     if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
 
     const isDev = document.body.classList.contains('is-dev-mode');
-    const track = isDev ? document.getElementById('dev-projects-track') : document.getElementById('ui-projects-track');
+
+    // UI mode uses the responsive 3-column showcase on desktop (no artificial pin gap)
+    if (!isDev) return;
+
+    const track = document.getElementById('dev-projects-track');
     const section = document.getElementById('projects');
 
     if (!track || !section) return;
@@ -170,7 +173,6 @@
     requestAnimationFrame(() => {
       const trackWidth = track.scrollWidth;
       const windowWidth = window.innerWidth;
-      // Distance needed so the last project card is comfortably aligned in full view
       const extraOffset = Math.max(60, windowWidth * 0.08);
       const scrollDist = Math.max(0, trackWidth - windowWidth + extraOffset);
 
