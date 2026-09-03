@@ -10,6 +10,9 @@
   <meta property="og:description" content="Portfolio of Ahmed Mohamed Khalaf — CS student, AI developer, and UI/UX designer.">
   <meta property="og:type" content="website">
 
+  <!-- Force scroll to top before anything renders (prevents browser restoring to CV) -->
+  <script>if('scrollRestoration'in history)history.scrollRestoration='manual';window.scrollTo(0,0);</script>
+
   <link rel="stylesheet" href="css/style.css">
 
   <!-- GSAP + ScrollTrigger + Lenis -->
@@ -157,7 +160,7 @@
       <!-- Dev About -->
       <div class="mode-dev">
         <p class="section__label" data-reveal>About</p>
-        <h2 class="section__heading" data-scramble data-reveal>dev.experience()</h2>
+        <h2 class="section__heading" data-scramble data-reveal>dev.experience( )</h2>
 
         <div class="about__grid">
           <div class="about__photo-wrap" data-reveal>
@@ -211,7 +214,7 @@
       <!-- UI Tools -->
       <div class="mode-ui">
         <p class="section__label" data-reveal>Toolkit</p>
-        <h2 class="section__heading" id="skills-heading" data-scramble data-reveal>tools.kit()</h2>
+        <h2 class="section__heading" id="skills-heading" data-scramble data-reveal>tools.kit( )</h2>
         <div class="skills__grid" data-reveal>
           <div class="skill-tag"><span class="skill-tag__name">Figma</span><span class="skill-tag__sub">Primary</span></div>
           <div class="skill-tag"><span class="skill-tag__name">Adobe XD</span><span class="skill-tag__sub">Prototyping</span></div>
@@ -228,61 +231,84 @@
       <!-- Dev Stack — grouped clusters -->
       <div class="mode-dev">
         <p class="section__label" data-reveal>Stack</p>
-        <h2 class="section__heading" data-scramble data-reveal>skills.stack()</h2>
+        <h2 class="section__heading" data-scramble data-reveal>skills.stack { }</h2>
 
         <div class="skill-clusters" data-reveal>
 
-          <!-- Cluster 1: AI & ML -->
+          <!-- Cluster 1: AI & Machine Learning -->
           <div class="skill-cluster">
-            <p class="skill-cluster__label">AI &amp; ML</p>
+            <p class="skill-cluster__label">AI &amp; Machine Learning</p>
             <div class="skill-cluster__items">
-              <span class="skill-pill is-primary">CUDA</span>
-              <span class="skill-pill is-primary">C++</span>
               <span class="skill-pill is-primary">Python</span>
-              <span class="skill-pill">cuDNN</span>
-              <span class="skill-pill">NumPy</span>
-              <span class="skill-pill">Scikit-learn</span>
-              <span class="skill-pill">Streamlit</span>
+              <span class="skill-pill is-primary">NumPy</span>
+              <span class="skill-pill is-primary">Scikit-learn</span>
+              <span class="skill-pill">PyTorch</span>
+              <span class="skill-pill">Pandas</span>
+              <span class="skill-pill">Neural Networks</span>
             </div>
           </div>
 
-          <!-- Cluster 2: Systems & Languages -->
+          <!-- Cluster 2: High-Performance Computing (HPC) -->
           <div class="skill-cluster">
-            <p class="skill-cluster__label">Systems &amp; Languages</p>
+            <p class="skill-cluster__label">High-Performance Computing</p>
             <div class="skill-cluster__items">
-              <span class="skill-pill is-primary">C</span>
+              <span class="skill-pill is-primary">CUDA / C++</span>
+              <span class="skill-pill is-primary">GPU Kernels</span>
+              <span class="skill-pill">Parallel Computing</span>
+              <span class="skill-pill">Memory Coalescing</span>
+            </div>
+          </div>
+
+          <!-- Cluster 3: Software Development -->
+          <div class="skill-cluster">
+            <p class="skill-cluster__label">Software Development</p>
+            <div class="skill-cluster__items">
               <span class="skill-pill is-primary">C++</span>
               <span class="skill-pill is-primary">Java</span>
-              <span class="skill-pill">Linux</span>
-              <span class="skill-pill">QEMU</span>
-              <span class="skill-pill">OS Internals</span>
-              <span class="skill-pill">HTML/CSS/JS</span>
-            </div>
-          </div>
-
-          <!-- Cluster 3: Mobile & Cross-platform -->
-          <div class="skill-cluster">
-            <p class="skill-cluster__label">Mobile &amp; Cross-platform</p>
-            <div class="skill-cluster__items">
               <span class="skill-pill is-primary">Flutter</span>
-              <span class="skill-pill is-primary">Qt</span>
-              <span class="skill-pill is-primary">SFML</span>
+              <span class="skill-pill is-primary">Qt 6</span>
               <span class="skill-pill">Dart</span>
-              <span class="skill-pill">Android</span>
-              <span class="skill-pill">2D Graphics</span>
+              <span class="skill-pill">OOP Design</span>
+              <span class="skill-pill">Data Structures</span>
             </div>
           </div>
 
-          <!-- Cluster 4: Tools & Platforms -->
+          <!-- Cluster 4: Operating Systems & Systems -->
           <div class="skill-cluster">
-            <p class="skill-cluster__label">Tools &amp; Platforms</p>
+            <p class="skill-cluster__label">Operating Systems &amp; Systems</p>
             <div class="skill-cluster__items">
+              <span class="skill-pill is-primary">C</span>
+              <span class="skill-pill is-primary">Linux</span>
+              <span class="skill-pill is-primary">QEMU</span>
+              <span class="skill-pill">Virtual Memory / Scheduling</span>
+              <span class="skill-pill">Assembly</span>
+            </div>
+          </div>
+
+          <!-- Cluster 5: Game Development -->
+          <div class="skill-cluster">
+            <p class="skill-cluster__label">Game Development</p>
+            <div class="skill-cluster__items">
+              <span class="skill-pill is-primary">Godot Engine</span>
+              <span class="skill-pill is-primary">SFML</span>
+              <span class="skill-pill is-primary">C++</span>
+              <span class="skill-pill is-primary">Unity</span>
+              <span class="skill-pill">2D Graphics</span>
+              <span class="skill-pill">Game Physics</span>
+            </div>
+          </div>
+
+          <!-- Cluster 6: Developer Tools & DevOps -->
+          <div class="skill-cluster">
+            <p class="skill-cluster__label">Developer Tools &amp; DevOps</p>
+            <div class="skill-cluster__items">
+              <span class="skill-pill is-primary">Docker</span>
               <span class="skill-pill is-primary">Git</span>
               <span class="skill-pill is-primary">GitHub</span>
-              <span class="skill-pill is-primary">Godot</span>
-              <span class="skill-pill">Figma</span>
+              <span class="skill-pill is-primary">Linux CLI</span>
+              <span class="skill-pill is-primary">CMake</span>
               <span class="skill-pill">VSCode</span>
-              <span class="skill-pill">CMake</span>
+              <span class="skill-pill">GDB</span>
             </div>
           </div>
 
@@ -728,16 +754,18 @@
     <div class="section-inner">
 
       <p class="section__label" data-reveal>Resume</p>
-      <h2 class="section__heading" data-scramble data-reveal id="cv-heading">curriculum.vitae()</h2>
+      <h2 class="section__heading" data-scramble data-reveal id="cv-heading">curriculum.vitae( )</h2>
 
       <!-- UI CV -->
       <div class="mode-ui" data-reveal>
         <div class="cv-embed-wrap">
           <iframe
             id="cv-iframe-ui"
-            src="assets/cv/cv-ui.pdf"
+            data-src="assets/cv/cv-ui.pdf"
             title="Ahmed Mohamed — Design CV"
-            aria-label="Embedded Design CV PDF">
+            aria-label="Embedded Design CV PDF"
+            tabindex="-1"
+            loading="lazy">
           </iframe>
           <div class="cv-embed-meta">
             <span>Design CV — updated 2025</span>
@@ -751,9 +779,11 @@
         <div class="cv-embed-wrap">
           <iframe
             id="cv-iframe-dev"
-            src="assets/cv/cv-dev.pdf"
+            data-src="assets/cv/cv-dev.pdf"
             title="Ahmed Mohamed — Developer CV"
-            aria-label="Embedded Developer CV PDF">
+            aria-label="Embedded Developer CV PDF"
+            tabindex="-1"
+            loading="lazy">
           </iframe>
           <div class="cv-embed-meta">
             <span>Developer CV — updated 2025</span>

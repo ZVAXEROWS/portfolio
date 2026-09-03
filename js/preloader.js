@@ -6,6 +6,12 @@
  */
 
 (function () {
+  // Always start at top of page — prevents browser restoring scroll to CV or other section
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  window.scrollTo(0, 0);
+
   const overlay = document.getElementById('preloader');
   const bar     = document.getElementById('preloader-bar');
 

@@ -11,11 +11,21 @@
   function initLenis() {
     if (typeof Lenis === 'undefined') return;
 
+    // Prevent browser auto-scroll restoration
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
     });
+
+    window.__lenis = lenis;
+
+    // Force top of page immediately on start
+    lenis.scrollTo(0, { immediate: true });
 
     // Integrate with GSAP ScrollTrigger if available
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
@@ -34,12 +44,50 @@
     // Pause Lenis during mode-toggle wipe so scroll doesn't shift
     window.addEventListener('modeChanged', () => {
       lenis.stop();
-      setTimeout(() => lenis.start(), 800);
+      setTimeout(() => {
+        lenis.resize();
+        lenis.start();
+      }, 700);
     });
 
     // Reduced motion: disable smooth scroll
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       lenis.destroy();
+    }
+  }
+
+  // ── Lazy Load CV Iframes (Prevents PDF viewer autofocus jumping to CV on page load) ──
+  function initLazyCV() {
+    const cvSection = document.getElementById('cv');
+    if (!cvSection) return;
+
+    function loadIframes() {
+      document.querySelectorAll('#cv iframe[data-src]').forEach(iframe => {
+        if (!iframe.src && iframe.dataset.src) {
+          iframe.src = iframe.dataset.src;
+        }
+      });
+    }
+
+    // Load if user clicks any CV nav anchor
+    document.querySelectorAll('a[href="#cv"]').forEach(anchor => {
+      anchor.addEventListener('click', loadIframes, { once: true });
+    });
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          loadIframes();
+          observer.disconnect();
+        }
+      }, { rootMargin: '300px 0px' });
+      observer.observe(cvSection);
+    } else {
+      window.addEventListener('scroll', () => {
+        if (cvSection.getBoundingClientRect().top < window.innerHeight * 1.5) {
+          loadIframes();
+        }
+      }, { passive: true, once: true });
     }
   }
 
@@ -112,6 +160,7 @@
   // ── Entry Point ───────────────────────────────────────
   function init() {
     initLenis();
+    initLazyCV();
     initNavHighlight();
     initAnchorScroll();
     initNavBehavior();

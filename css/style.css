@@ -498,14 +498,13 @@ section[data-theme] {
   transition: background 0.2s;
 }
 
-.skill-cluster:nth-child(2) { border-left: none; }
-.skill-cluster:nth-child(3) { border-top: none; }
-.skill-cluster:nth-child(4) { border-left: none; border-top: none; }
+.skill-cluster:nth-child(even) { border-left: none; }
+.skill-cluster:nth-child(n+3)  { border-top: none; }
 
 .skill-cluster:nth-child(1) { border-radius: 4px 0 0 0; }
 .skill-cluster:nth-child(2) { border-radius: 0 4px 0 0; }
-.skill-cluster:nth-child(3) { border-radius: 0 0 0 4px; }
-.skill-cluster:nth-child(4) { border-radius: 0 0 4px 0; }
+.skill-cluster:nth-child(5) { border-radius: 0 0 0 4px; }
+.skill-cluster:nth-child(6) { border-radius: 0 0 4px 0; }
 
 .skill-cluster:hover { background: var(--sec-card-h, var(--gray-80)); }
 
@@ -582,7 +581,8 @@ section[data-theme] {
   position: relative;
   z-index: 3;
   width: 100%;
-  padding: clamp(3.5rem, 7vh, 5.5rem) 0;
+  /* Reduced top padding so cards don't get pushed too far down */
+  padding: clamp(2rem, 4vh, 3.5rem) 0 clamp(2rem, 4vh, 3.5rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -612,9 +612,14 @@ section[data-theme] {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 2.25rem;
+  margin-bottom: 1.5rem;   /* was 2.25rem — reduces the gap between heading and cards */
   gap: 1rem;
   flex-wrap: wrap;
+}
+
+/* Tighter heading margin specifically inside the projects section */
+.section--projects .section__heading {
+  margin-bottom: 0;
 }
 
 .projects-header__info {
@@ -640,6 +645,7 @@ section[data-theme] {
 }
 
 /* ── UI Mode Gallery: 3-column responsive showcase ── */
+.mode-ui.projects-horizontal-container,
 .mode-ui .projects-horizontal-container {
   width: 100%;
   overflow: visible;
@@ -661,6 +667,7 @@ section[data-theme] {
 }
 
 @media (max-width: 960px) {
+  .mode-ui.projects-horizontal-container,
   .mode-ui .projects-horizontal-container {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -730,30 +737,33 @@ section[data-theme] {
   position: relative;
   width: calc(100% - 1.25rem);
   margin: 0.625rem 0.625rem 0;
-  aspect-ratio: 16/10;
   border-radius: 12px;
   overflow: hidden;
   background: var(--sec-bg, #f5f5f2);
   border: 1px solid var(--sec-border, #c8c8c4);
+  /* No forced aspect-ratio — let the image dictate its own proportions */
 }
 
 .zajno-card__img {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;              /* natural height: respects the image's own aspect ratio */
+  max-height: 580px;         /* prevent absurdly tall cards */
+  object-fit: contain;
+  object-position: center top;
   filter: grayscale(20%);
   transition: transform 0.6s var(--ease-out), filter 0.4s var(--ease-out);
 }
 
 .zajno-card:hover .zajno-card__img {
-  transform: scale(1.05);
+  transform: scale(1.03);
   filter: grayscale(0%);
 }
 
-/* Dev Visual (Code / Architecture Blueprint) */
+/* Dev Visual (Code / Architecture Blueprint) — needs a fixed height since there is no image */
 .zajno-card__dev-canvas {
   width: 100%;
-  height: 100%;
+  height: 180px;   /* explicit height because there is no real image to set dimensions */
   display: flex;
   flex-direction: column;
   justify-content: space-between;

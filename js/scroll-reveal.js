@@ -146,8 +146,14 @@
       horizontalTween = null;
     }
     if (horizontalTrigger) {
-      horizontalTrigger.kill();
+      // Passing true instructs GSAP to revert the pin-spacer and restore all inline styles
+      horizontalTrigger.kill(true);
       horizontalTrigger = null;
+    }
+
+    const devTrack = document.getElementById('dev-projects-track');
+    if (devTrack && typeof gsap !== 'undefined') {
+      gsap.set(devTrack, { clearProps: 'all' });
     }
   }
 
@@ -232,35 +238,54 @@
   });
 
   // Re-init horizontal scroll, skills layer stack, and refresh on mode toggle
-  window.addEventListener('modeChanged', () => {
+  window.addEventListener('modeChanged', (e) => {
     if (typeof ScrollTrigger === 'undefined') return;
 
+    const incomingMode = e.detail && e.detail.mode;
+    const projectsSection = document.getElementById('projects');
+
+    // 1. Immediately kill Dev horizontal scroll with revert=true so the pin-spacer is removed cleanly
+    killHorizontalScroll();
+
+    // 2. If the user was viewing or scrolled into the projects section, adjust scroll
+    // so they are neatly at the top of the projects section in the new mode
+    if (projectsSection) {
+      const rect = projectsSection.getBoundingClientRect();
+      const inProjects = rect.top < 150 && rect.bottom > 150;
+      if (inProjects) {
+        const navH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 72;
+        const targetY = window.scrollY + rect.top - navH;
+        const clampedY = Math.max(0, targetY);
+        window.scrollTo({ top: clampedY, behavior: 'instant' });
+        if (window.__lenis) {
+          window.__lenis.scrollTo(clampedY, { immediate: true });
+        }
+      }
+    }
+
+    // Refresh ScrollTrigger and Lenis so geometry is accurate
+    ScrollTrigger.refresh();
+    if (window.__lenis) {
+      window.__lenis.resize();
+    }
+
+    // 3. After the wipe transition completes, re-initialize if switching back to Dev
     setTimeout(() => {
       initSkillsLayerStack();
       initHorizontalScroll();
       ScrollTrigger.refresh();
+      if (window.__lenis) {
+        window.__lenis.resize();
+      }
 
+      // Ensure any newly visible [data-reveal] elements in the active mode are shown
       if (!reducedMotion) {
-        document.querySelectorAll('[data-reveal]').forEach(el => {
-          if (el.style.opacity === '0' || el.style.opacity === '') {
-            gsap.fromTo(
-              el,
-              { opacity: 0, y: 24 },
-              {
-                opacity: 1, y: 0,
-                duration: 0.55,
-                ease: 'power2.out',
-                scrollTrigger: {
-                  trigger: el,
-                  start: 'top 90%',
-                  once: true,
-                },
-              }
-            );
-          }
+        const modeSelector = incomingMode === 'dev' ? '.mode-dev' : '.mode-ui';
+        document.querySelectorAll(`${modeSelector} [data-reveal], ${modeSelector}[data-reveal]`).forEach(el => {
+          gsap.to(el, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' });
         });
       }
-    }, 150);
+    }, 450);
   });
 
   // Handle window resize smoothly
