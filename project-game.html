@@ -1,123 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gym - Ahmed Mohamed</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/project-detail.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .gallery-item {
-            position: relative;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            height: 340px;
-            margin: 0 auto;
-            width: auto;
-        }
-        .gallery-image {
-            width: auto;
-            height: 340px;
-            object-fit: contain;
-            transition: all 0.3s ease;
-        }
-        .gallery-item:hover .gallery-image {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 1rem;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-        .gallery-item:hover .gallery-overlay {
-            transform: translateY(0);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym — Ahmed Mohamed</title>
+  <meta name="description" content="Gym — fitness tracking and workout management app UI case study by Ahmed Mohamed Khalaf.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/project-detail.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-content">
-            <a href="index.html" class="logo">
-                <img src="1.png" alt="Logo" class="logo-img">
-            </a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="projects.html" class="active">Projects</a>
-            </div>
+
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-dot"  aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Project Nav -->
+  <header class="project-nav">
+    <div class="project-nav__inner">
+      <a href="index.html#projects" class="project-nav__back" data-scramble>back to work</a>
+      <a href="index.html" class="project-nav__logo">AHMED.MK</a>
+    </div>
+  </header>
+
+  <main class="project-detail">
+
+    <!-- Header -->
+    <div class="project-header">
+      <p class="project-header__eyebrow">UI / UX Case Study</p>
+      <h1 class="project-header__title" data-scramble>Gym</h1>
+      <p class="project-header__desc">
+        A fitness tracking and workout management app designed to keep athletes
+        consistent — with progress analytics and instructional video integration.
+      </p>
+    </div>
+
+    <!-- Design Gallery -->
+    <div class="project-section">
+      <p class="project-section__label">Design</p>
+      <h2 class="project-section__heading" data-scramble>design.gallery()</h2>
+      <div class="img-grid">
+        <img src="Gym/main.png"    alt="Gym app main interface" loading="lazy">
+        <img src="Gym/workout.png" alt="Workout tracking screen" loading="lazy">
+      </div>
+    </div>
+
+    <!-- Key Features -->
+    <div class="project-section">
+      <p class="project-section__label">Features</p>
+      <h2 class="project-section__heading" data-scramble>key.features()</h2>
+      <div class="skills__grid">
+        <div class="skill-tag">
+          <span class="skill-tag__name">Activity Tracking</span>
+          <span class="skill-tag__sub">Steps & Calories</span>
         </div>
-    </nav>
-
-    <main class="project-detail">
-        <div class="project-header">
-            <h1>Gym</h1>
-            <p class="project-description">A comprehensive fitness tracking and workout management application with progress monitoring and detailed analytics</p>
+        <div class="skill-tag">
+          <span class="skill-tag__name">Progress Monitoring</span>
+          <span class="skill-tag__sub">Weights & Trends</span>
         </div>
+        <div class="skill-tag">
+          <span class="skill-tag__name">Detailed Reports</span>
+          <span class="skill-tag__sub">Charts & Analytics</span>
+        </div>
+        <div class="skill-tag">
+          <span class="skill-tag__name">Workout Videos</span>
+          <span class="skill-tag__sub">Form Guides</span>
+        </div>
+      </div>
+    </div>
 
-        <section class="gallery-section">
-            <h2>Design Gallery</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="Gym/main.png" alt="Gym App Main Interface" class="gallery-image">
-                    <div class="gallery-overlay">
-                        <p>Main Interface Design</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="Gym/workout.png" alt="Workout Tracking Screen" class="gallery-image">
-                    <div class="gallery-overlay">
-                        <p>Workout Tracking Screen</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+  </main>
 
-        <section class="features-section">
-            <h2>Key Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-walking"></i>
-                    <h3>Activity Tracking</h3>
-                    <p>Calculate steps and calories burned during workouts</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Progress Monitoring</h3>
-                    <p>Track your weights and workout progress over time</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-chart-bar"></i>
-                    <h3>Detailed Reports</h3>
-                    <p>Generate comprehensive reports and graphs of your fitness data</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-video"></i>
-                    <h3>Workout Videos</h3>
-                    <p>Access instructional videos for proper exercise techniques</p>
-                </div>
-            </div>
-        </section>
-    </main>
+  <!-- Footer nav -->
+  <nav class="project-footer-nav" aria-label="Project navigation">
+    <a href="project-money-insights.html" class="project-footer-nav__link">← Money Insights</a>
+    <a href="project-uninotes.html" class="project-footer-nav__link">UniNotes →</a>
+  </nav>
 
-    <footer>
-        <p>&copy; 2024 Ahmed Mohamed. All rights reserved.</p>
-    </footer>
+  <footer class="footer">
+    <p class="footer__copy">&copy; 2025 Ahmed Mohamed Khalaf. All rights reserved.</p>
+    <div class="footer__links">
+      <a href="https://github.com/ZVAXEROWS" target="_blank" class="footer__link">GitHub</a>
+      <a href="mailto:ahmedmkh1026@gmail.com" class="footer__link">Email</a>
+    </div>
+  </footer>
 
-    <script src="js/main.js"></script>
+  <script src="js/cursor.js" defer></script>
+  <script src="js/split-text.js" defer></script>
 </body>
-</html> 
+</html>

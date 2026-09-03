@@ -1,194 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UniNotes - Ahmed Mohamed</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/project-detail.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniNotes — Ahmed Mohamed</title>
+  <meta name="description" content="UniNotes — study materials app for CIS students at Ain Shams University. Live on Google Play. Designed by Ahmed Mohamed Khalaf.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/project-detail.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-content">
-            <a href="index.html" class="logo">
-                <img src="1.png" alt="Logo" class="logo-img">
-            </a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="projects.html" class="active">Projects</a>
-            </div>
+
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-dot"  aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Project Nav -->
+  <header class="project-nav">
+    <div class="project-nav__inner">
+      <a href="index.html#projects" class="project-nav__back" data-scramble>back to work</a>
+      <a href="index.html" class="project-nav__logo">AHMED.MK</a>
+    </div>
+  </header>
+
+  <main class="project-detail">
+
+    <!-- Header -->
+    <div class="project-header">
+      <p class="project-header__eyebrow">UI / UX Case Study — Live on Google Play</p>
+      <h1 class="project-header__title" data-scramble>UniNotes</h1>
+      <p class="project-header__desc">
+        A comprehensive study materials collection app built specifically for
+        Computer and Information Science students at Ain Shams University.
+        Now live on Google Play.
+      </p>
+      <a href="https://play.google.com/store/apps/details?id=com.uninotes.app"
+         target="_blank"
+         class="store-link">
+        ▶ Download on Google Play
+      </a>
+    </div>
+
+    <!-- App Versions -->
+    <div class="project-section">
+      <p class="project-section__label">Design Evolution</p>
+      <h2 class="project-section__heading" data-scramble>app.versions()</h2>
+
+      <div class="tab-selector">
+        <button class="tab-btn active" data-version="new" id="tab-new">New Version</button>
+        <button class="tab-btn"        data-version="old" id="tab-old">Original</button>
+      </div>
+
+      <div class="gallery-scroll-wrap">
+        <div class="gallery-scroll" id="version-scroll"></div>
+        <div class="scroll-nav">
+          <button class="scroll-nav__btn" id="v-prev" aria-label="Scroll left">←</button>
+          <button class="scroll-nav__btn" id="v-next" aria-label="Scroll right">→</button>
         </div>
-    </nav>
+      </div>
+    </div>
 
-    <main class="project-detail">
-        <div class="project-header">
-            <h1>UniNotes</h1>
-            <p class="project-description">A comprehensive study materials collection app specifically designed for Computer and Information Science students at Ain Shams University</p>
-            <a href="https://play.google.com/store/apps/details?id=com.uninotes.app" target="_blank" class="store-link">
-                <i class="fab fa-google-play"></i>
-                Download on Google Play
-            </a>
+    <!-- Key Features -->
+    <div class="project-section">
+      <p class="project-section__label">Features</p>
+      <h2 class="project-section__heading" data-scramble>key.features()</h2>
+      <div class="skills__grid">
+        <div class="skill-tag">
+          <span class="skill-tag__name">Note Organization</span>
+          <span class="skill-tag__sub">Course-based</span>
         </div>
+        <div class="skill-tag">
+          <span class="skill-tag__name">Quick Search</span>
+          <span class="skill-tag__sub">Instant Results</span>
+        </div>
+        <div class="skill-tag">
+          <span class="skill-tag__name">Sharing</span>
+          <span class="skill-tag__sub">Classmate Collab</span>
+        </div>
+        <div class="skill-tag">
+          <span class="skill-tag__name">Cloud Sync</span>
+          <span class="skill-tag__sub">All Devices</span>
+        </div>
+      </div>
+    </div>
 
-        <section class="version-section">
-            <h2>App Versions</h2>
-            <div class="version-selector">
-                <button class="version-btn active" data-version="new">New Version</button>
-                <button class="version-btn" data-version="old">Original Version</button>
-            </div>
-            <div class="version-container">
-                <button class="nav-btn prev-btn" id="versionPrevBtn">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <div class="version-gallery" id="versionGallery">
-                    <!-- Version images will be loaded here -->
-                </div>
-                <button class="nav-btn next-btn" id="versionNextBtn">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </section>
+  </main>
 
-        <section class="features-section">
-            <h2>Key Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-book"></i>
-                    <h3>Note Taking</h3>
-                    <p>Organize and manage your study materials efficiently</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-search"></i>
-                    <h3>Quick Search</h3>
-                    <p>Find your notes and resources instantly</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-share-alt"></i>
-                    <h3>Sharing</h3>
-                    <p>Share notes and resources with classmates</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-cloud"></i>
-                    <h3>Cloud Sync</h3>
-                    <p>Access your notes across all devices</p>
-                </div>
-            </div>
-        </section>
-    </main>
+  <!-- Footer nav -->
+  <nav class="project-footer-nav" aria-label="Project navigation">
+    <a href="project-game.html" class="project-footer-nav__link">← Gym</a>
+    <a href="index.html#projects" class="project-footer-nav__link">All Projects →</a>
+  </nav>
 
-    <footer>
-        <p>&copy; 2024 Ahmed Mohamed. All rights reserved.</p>
-    </footer>
+  <footer class="footer">
+    <p class="footer__copy">&copy; 2025 Ahmed Mohamed Khalaf. All rights reserved.</p>
+    <div class="footer__links">
+      <a href="https://github.com/ZVAXEROWS" target="_blank" class="footer__link">GitHub</a>
+      <a href="mailto:ahmedmkh1026@gmail.com" class="footer__link">Email</a>
+    </div>
+  </footer>
 
-    <style>
-        .version-container {
-            position: relative;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-top: 1rem;
-            max-width: 100%;
-            overflow: hidden;
-        }
-        .nav-btn {
-            background: var(--accent-color);
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            z-index: 2;
-        }
-        .nav-btn:hover {
-            background: var(--accent-color-hover);
-        }
-        .version-gallery {
-            display: flex;
-            gap: 1rem;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-            padding: 1rem 0;
-            width: 100%;
-        }
-        .version-gallery img {
-            width: 340px;
-            height: 340px;
-            object-fit: cover;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        .version-gallery img:hover {
-            width: 350px;
-            height: 350px;
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-    </style>
+  <script src="js/cursor.js" defer></script>
+  <script src="js/split-text.js" defer></script>
 
-    <script>
-        // Version switching functionality
-        const versionButtons = document.querySelectorAll('.version-btn');
-        const versionGallery = document.getElementById('versionGallery');
-        let currentVersion = 'new';
+  <script>
+    function loadVersion(version) {
+      const container = document.getElementById('version-scroll');
+      if (!container) return;
+      let images;
+      if (version === 'new') {
+        images = Array.from({ length: 39 }, (_, i) => `(${i + 1}).png`);
+      } else {
+        images = Array.from({ length: 37 }, (_, i) => `(${i + 37}).png`);
+      }
+      const dir = version === 'new' ? 'UNI notes' : 'Uni notes old';
+      container.innerHTML = '';
+      images.forEach(name => {
+        const img = document.createElement('img');
+        img.src = `${dir}/${name}`;
+        img.alt = `UniNotes ${version === 'new' ? 'new' : 'original'} version screen`;
+        img.loading = 'lazy';
+        container.appendChild(img);
+      });
+    }
 
-        // Function to load images from a directory
-        async function loadImages(directory, container) {
-            try {
-                let images;
-                if (directory === 'UNI notes') {
-                    // New version: (1).png to (39).png
-                    images = Array.from({length: 39}, (_, i) => `(${i + 1}).png`);
-                } else {
-                    // Old version: (37).png to (73).png
-                    images = Array.from({length: 37}, (_, i) => `(${i + 37}).png`);
-                }
-                
-                container.innerHTML = '';
-                images.forEach(name => {
-                    const img = document.createElement('img');
-                    img.src = `${directory}/${name}`;
-                    img.alt = 'App screenshot';
-                    container.appendChild(img);
-                });
-            } catch (error) {
-                console.error('Error loading images:', error);
-            }
-        }
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        loadVersion(btn.dataset.version);
+      });
+    });
 
-        // Navigation functionality
-        function setupNavigation(container, prevBtn, nextBtn) {
-            const scrollAmount = 340 + 16; // image width + gap
-            prevBtn.addEventListener('click', () => {
-                container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-            });
-            nextBtn.addEventListener('click', () => {
-                container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-            });
-        }
-
-        versionButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                versionButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                currentVersion = button.dataset.version;
-                const directory = currentVersion === 'new' ? 'UNI notes' : 'Uni notes old';
-                loadImages(directory, versionGallery);
-            });
-        });
-
-        // Initial load and setup
-        document.addEventListener('DOMContentLoaded', () => {
-            loadImages('UNI notes', versionGallery);
-            setupNavigation(
-                versionGallery,
-                document.getElementById('versionPrevBtn'),
-                document.getElementById('versionNextBtn')
-            );
-        });
-    </script>
+    document.addEventListener('DOMContentLoaded', () => {
+      loadVersion('new');
+      const scrollEl = document.getElementById('version-scroll');
+      const amount = 356;
+      document.getElementById('v-prev')?.addEventListener('click', () =>
+        scrollEl.scrollBy({ left: -amount, behavior: 'smooth' }));
+      document.getElementById('v-next')?.addEventListener('click', () =>
+        scrollEl.scrollBy({ left:  amount, behavior: 'smooth' }));
+    });
+  </script>
 </body>
-</html> 
+</html>

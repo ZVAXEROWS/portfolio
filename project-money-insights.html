@@ -1,192 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Money Insights - Ahmed Mohamed</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/project-detail.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Money Insights — Ahmed Mohamed</title>
+  <meta name="description" content="Money Insights — a financial management app UI case study by Ahmed Mohamed Khalaf. Multiple themes and comprehensive wireframes.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/project-detail.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-content">
-            <a href="index.html" class="logo">
-                <img src="1.png" alt="Logo" class="logo-img">
-            </a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="projects.html" class="active">Projects</a>
-            </div>
+
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-dot"  aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Project Nav -->
+  <header class="project-nav">
+    <div class="project-nav__inner">
+      <a href="index.html#projects" class="project-nav__back" data-scramble>back to work</a>
+      <a href="index.html" class="project-nav__logo">AHMED.MK</a>
+    </div>
+  </header>
+
+  <main class="project-detail">
+
+    <!-- Header -->
+    <div class="project-header">
+      <p class="project-header__eyebrow">UI / UX Case Study</p>
+      <h1 class="project-header__title" data-scramble>Money<br>Insights</h1>
+      <p class="project-header__desc">
+        A personal finance management app designed to give users clear visibility into
+        their spending and savings across multiple visual themes.
+      </p>
+    </div>
+
+    <!-- Wireframes -->
+    <div class="project-section">
+      <p class="project-section__label">Process</p>
+      <h2 class="project-section__heading" data-scramble>wireframes/</h2>
+      <div class="gallery-scroll-wrap">
+        <div class="gallery-scroll" id="wireframes-scroll"></div>
+        <div class="scroll-nav">
+          <button class="scroll-nav__btn" id="wf-prev" aria-label="Scroll left">←</button>
+          <button class="scroll-nav__btn" id="wf-next" aria-label="Scroll right">→</button>
         </div>
-    </nav>
+      </div>
+    </div>
 
-    <main class="project-detail">
-        <div class="project-header">
-            <h1>Money Insights</h1>
-            <p class="project-description">A modern financial management application with multiple themes and comprehensive wireframes</p>
+    <!-- Theme Variations -->
+    <div class="project-section">
+      <p class="project-section__label">Design</p>
+      <h2 class="project-section__heading" data-scramble>theme.variations()</h2>
+
+      <div class="tab-selector">
+        <button class="tab-btn active" data-theme="Blue"  id="tab-blue">Blue</button>
+        <button class="tab-btn"        data-theme="Dark"  id="tab-dark">Dark</button>
+        <button class="tab-btn"        data-theme="Light" id="tab-light">Light</button>
+      </div>
+
+      <div class="gallery-scroll-wrap">
+        <div class="gallery-scroll" id="theme-scroll"></div>
+        <div class="scroll-nav">
+          <button class="scroll-nav__btn" id="th-prev" aria-label="Scroll left">←</button>
+          <button class="scroll-nav__btn" id="th-next" aria-label="Scroll right">→</button>
         </div>
+      </div>
+    </div>
 
-        <section class="wireframes-section">
-            <h2>Wireframes</h2>
-            <div class="wireframes-container">
-                <button class="nav-btn prev-btn" id="wireframePrevBtn">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <div class="wireframes-grid" id="wireframesContainer">
-                    <!-- Wireframe images will be loaded here -->
-                </div>
-                <button class="nav-btn next-btn" id="wireframeNextBtn">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </section>
+  </main>
 
-        <section class="themes-section">
-            <h2>Theme Variations</h2>
-            <div class="theme-selector">
-                <button class="theme-btn active" data-theme="Blue">Blue Theme</button>
-                <button class="theme-btn" data-theme="Dark">Dark Theme</button>
-                <button class="theme-btn" data-theme="Light">Light Theme</button>
-            </div>
-            <div class="theme-container">
-                <button class="nav-btn prev-btn" id="themePrevBtn">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <div class="theme-gallery" id="themeGallery">
-                    <!-- Theme images will be loaded here -->
-                </div>
-                <button class="nav-btn next-btn" id="themeNextBtn">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </section>
-    </main>
+  <!-- Footer nav -->
+  <nav class="project-footer-nav" aria-label="Project navigation">
+    <a href="index.html#projects" class="project-footer-nav__link">← All Projects</a>
+    <a href="project-game.html" class="project-footer-nav__link">Gym →</a>
+  </nav>
 
-    <footer>
-        <p>&copy; 2024 Ahmed Mohamed. All rights reserved.</p>
-    </footer>
+  <footer class="footer">
+    <p class="footer__copy">&copy; 2025 Ahmed Mohamed Khalaf. All rights reserved.</p>
+    <div class="footer__links">
+      <a href="https://github.com/ZVAXEROWS" target="_blank" class="footer__link">GitHub</a>
+      <a href="mailto:ahmedmkh1026@gmail.com" class="footer__link">Email</a>
+    </div>
+  </footer>
 
-    <style>
-        .wireframes-container, .theme-container {
-            position: relative;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            max-width: 100%;
-            overflow: hidden;
-        }
-        .nav-btn {
-            background: var(--accent-color);
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            z-index: 2;
-        }
-        .nav-btn:hover {
-            background: var(--accent-color-hover);
-        }
-        .wireframes-grid, .theme-gallery {
-            display: flex;
-            gap: 1rem;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-            padding: 1rem 0;
-            width: 100%;
-        }
-        .wireframes-grid img, .theme-gallery img {
-            width: 340px;
-            height: 340px;
-            object-fit: cover;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        .wireframes-grid img:hover, .theme-gallery img:hover {
-            width: 350px;
-            height: 350px;
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-    </style>
+  <script src="js/cursor.js" defer></script>
+  <script src="js/split-text.js" defer></script>
 
-    <script>
-        // Function to load images from a directory
-        async function loadImages(directory, container) {
-            try {
-                // For wireframes
-                if (directory.includes('wireframing')) {
-                    const images = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'];
-                    container.innerHTML = '';
-                    images.forEach(name => {
-                        const img = document.createElement('img');
-                        img.src = `Money insights/wireframing/${name}`;
-                        img.alt = 'Wireframe screenshot';
-                        container.appendChild(img);
-                    });
-                }
-                // For themes
-                else {
-                    const theme = directory.split('/').pop().toLowerCase();
-                    const images = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png'];
-                    container.innerHTML = '';
-                    images.forEach(name => {
-                        const img = document.createElement('img');
-                        img.src = `Money insights/${theme}/${name}`;
-                        img.alt = `${theme} theme screenshot`;
-                        container.appendChild(img);
-                    });
-                }
-            } catch (error) {
-                console.error('Error loading images:', error);
-            }
-        }
+  <script>
+    // Load wireframe images
+    function loadWireframes() {
+      const container = document.getElementById('wireframes-scroll');
+      if (!container) return;
+      const images = ['1.png','2.png','3.png','4.png','5.png','6.png'];
+      container.innerHTML = '';
+      images.forEach(name => {
+        const img = document.createElement('img');
+        img.src = `Money insights/wireframing/${name}`;
+        img.alt = `Money Insights wireframe ${name}`;
+        img.loading = 'lazy';
+        container.appendChild(img);
+      });
+    }
 
-        // Navigation functionality
-        function setupNavigation(container, prevBtn, nextBtn) {
-            const scrollAmount = 340 + 16; // image width + gap
-            prevBtn.addEventListener('click', () => {
-                container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-            });
-            nextBtn.addEventListener('click', () => {
-                container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-            });
-        }
+    // Load theme images
+    function loadTheme(theme) {
+      const container = document.getElementById('theme-scroll');
+      if (!container) return;
+      const images = ['1.png','2.png','3.png','4.png','5.png','6.png','7.png'];
+      container.innerHTML = '';
+      images.forEach(name => {
+        const img = document.createElement('img');
+        img.src = `Money insights/${theme}/${name}`;
+        img.alt = `Money Insights ${theme} theme screen ${name}`;
+        img.loading = 'lazy';
+        container.appendChild(img);
+      });
+    }
 
-        // Theme switching functionality
-        const themeButtons = document.querySelectorAll('.theme-btn');
-        const themeGallery = document.getElementById('themeGallery');
-        let currentTheme = 'Blue';
+    // Scroll nav
+    function setupScrollNav(scrollEl, prevBtn, nextBtn, amount) {
+      prevBtn && prevBtn.addEventListener('click', () => scrollEl.scrollBy({ left: -amount, behavior: 'smooth' }));
+      nextBtn && nextBtn.addEventListener('click', () => scrollEl.scrollBy({ left:  amount, behavior: 'smooth' }));
+    }
 
-        themeButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                themeButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                currentTheme = button.dataset.theme;
-                loadImages(`Money insights/${currentTheme}`, themeGallery);
-            });
-        });
+    // Theme tabs
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        loadTheme(btn.dataset.theme);
+      });
+    });
 
-        // Initial load and setup
-        document.addEventListener('DOMContentLoaded', () => {
-            loadImages('Money insights/wireframing', document.getElementById('wireframesContainer'));
-            loadImages('Money insights/Blue', themeGallery);
-            
-            setupNavigation(
-                document.getElementById('wireframesContainer'),
-                document.getElementById('wireframePrevBtn'),
-                document.getElementById('wireframeNextBtn')
-            );
-            setupNavigation(
-                themeGallery,
-                document.getElementById('themePrevBtn'),
-                document.getElementById('themeNextBtn')
-            );
-        });
-    </script>
+    document.addEventListener('DOMContentLoaded', () => {
+      loadWireframes();
+      loadTheme('Blue');
+      setupScrollNav(
+        document.getElementById('wireframes-scroll'),
+        document.getElementById('wf-prev'),
+        document.getElementById('wf-next'),
+        356
+      );
+      setupScrollNav(
+        document.getElementById('theme-scroll'),
+        document.getElementById('th-prev'),
+        document.getElementById('th-next'),
+        356
+      );
+    });
+  </script>
 </body>
-</html> 
+</html>
