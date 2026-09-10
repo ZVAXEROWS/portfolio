@@ -368,6 +368,12 @@ section[data-theme] {
   gap: clamp(1.5rem, 3vw, 2.5rem);
 }
 
+@media (max-width: 768px) {
+  .nav__links {
+    display: none;
+  }
+}
+
 .nav__link {
   font-family: var(--font-mono);
   font-size: 0.82rem;
