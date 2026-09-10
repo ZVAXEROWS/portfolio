@@ -581,11 +581,9 @@ section[data-theme] {
   position: relative;
   z-index: 3;
   width: 100%;
-  /* Reduced top padding so cards don't get pushed too far down */
-  padding: clamp(2rem, 4vh, 3.5rem) 0 clamp(2rem, 4vh, 3.5rem);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  /* Stable height — no flex tricks that fight GSAP pin height */
+  padding: clamp(2rem, 4vh, 3.5rem) 0;
+  /* overflow: hidden stops horizontal bleed from the dev track */
   overflow: hidden;
   box-sizing: border-box;
   box-shadow: 0 -28px 60px rgba(0, 0, 0, 0.35);
@@ -594,10 +592,9 @@ section[data-theme] {
 
 .projects-sticky-wrap {
   width: 100%;
+  /* No position:sticky or min-height — let content dictate height */
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  overflow: hidden;
 }
 
 .projects-section-inner {
@@ -644,10 +641,14 @@ section[data-theme] {
   color: var(--sec-fg-faint, var(--gray-50));
 }
 
-/* ── UI Mode Gallery: 3-column responsive showcase ── */
-.mode-ui.projects-horizontal-container,
-.mode-ui .projects-horizontal-container {
+/* ── Shared container base for both modes ── */
+.projects-horizontal-container {
   width: 100%;
+  box-sizing: border-box;
+}
+
+/* ── UI Mode Gallery: 3-column responsive showcase ── */
+.mode-ui.projects-horizontal-container {
   overflow: visible;
 }
 
@@ -656,7 +657,6 @@ section[data-theme] {
   grid-template-columns: repeat(3, 1fr);
   gap: clamp(1.25rem, 2vw, 2rem);
   width: 100%;
-  max-width: 1400px;
   padding-right: 0;
   padding-bottom: 0;
 }
@@ -664,18 +664,57 @@ section[data-theme] {
 .mode-ui .zajno-card {
   width: 100%;
   max-width: 100%;
+  /* Remove fixed clamp width so grid column controls it */
+  flex-shrink: unset;
 }
 
+/* ── Dev Mode Gallery: GSAP pin horizontal scroll (desktop ≥768px) ── */
+/* overflow: hidden clips the track as GSAP translates it via transform.
+   DO NOT use overflow-x: auto here — that creates a separate scroll
+   container which fights the GSAP ScrollTrigger pin. */
+.mode-dev.projects-horizontal-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.mode-dev .projects-track {
+  display: flex;
+  gap: clamp(1.25rem, 2vw, 2rem);
+  width: max-content;
+  padding-bottom: 1rem;
+  padding-right: clamp(1.5rem, 5vw, 4rem);
+  will-change: transform;
+}
+
+.mode-dev .zajno-card {
+  flex-shrink: 0;
+  width: clamp(300px, 30vw, 420px);
+  /* No scroll-snap-align: GSAP controls position, not browser scroll */
+}
+
+/* Below 768px: fall back to native CSS horizontal scroll for dev mode too */
+@media (max-width: 767px) {
+  .mode-dev.projects-horizontal-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .mode-dev.projects-horizontal-container::-webkit-scrollbar { display: none; }
+  .mode-dev .projects-track { will-change: auto; }
+  .mode-dev .zajno-card { scroll-snap-align: start; }
+}
+
+/* Responsive: UI mode falls back to horizontal scroll below 960px */
 @media (max-width: 960px) {
-  .mode-ui.projects-horizontal-container,
-  .mode-ui .projects-horizontal-container {
+  .mode-ui.projects-horizontal-container {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
     padding-bottom: 1rem;
     scrollbar-width: none;
   }
-  .mode-ui .projects-horizontal-container::-webkit-scrollbar {
+  .mode-ui.projects-horizontal-container::-webkit-scrollbar {
     display: none;
   }
   .mode-ui .projects-track {
@@ -688,21 +727,6 @@ section[data-theme] {
     scroll-snap-align: start;
     flex-shrink: 0;
   }
-}
-
-/* ── Dev Mode Gallery: 8-project horizontal scroll strip ── */
-.mode-dev .projects-track {
-  display: flex;
-  gap: clamp(1.5rem, 2.5vw, 2.5rem);
-  width: max-content;
-  padding-bottom: 1.5rem;
-  padding-right: clamp(4rem, 10vw, 10rem);
-  will-change: transform;
-}
-
-.mode-dev .zajno-card {
-  flex-shrink: 0;
-  width: clamp(340px, 30vw, 460px);
 }
 
 /* ── Zajno Card (Based on reference lines 389-420) ── */
@@ -1094,14 +1118,16 @@ body.is-dev-mode .mode-dev.is-flex { display: flex; }
 }
 
 @media (max-width: 767px) {
-  .projects-horizontal-container {
+  .mode-ui.projects-horizontal-container,
+  .mode-dev.projects-horizontal-container {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
     padding-bottom: 1.5rem;
     scrollbar-width: none;
   }
-  .projects-horizontal-container::-webkit-scrollbar {
+  .mode-ui.projects-horizontal-container::-webkit-scrollbar,
+  .mode-dev.projects-horizontal-container::-webkit-scrollbar {
     display: none;
   }
   .projects-track {
@@ -1109,7 +1135,7 @@ body.is-dev-mode .mode-dev.is-flex { display: flex; }
   }
   .zajno-card {
     scroll-snap-align: start;
-    width: 82vw;
+    width: 82vw !important;
     min-width: 280px;
   }
   .footer { flex-direction: column; align-items: flex-start; }

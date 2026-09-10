@@ -1,20 +1,27 @@
 /**
  * scroll-reveal.js
- * Premium GSAP scroll animations:
- *   1. Pinned layer stacking transition (#skills → #projects)
- *   2. Horizontal scroll for projects (Dev mode: 8 projects horizontal pin & scrub)
- *   3. Heading parallax (foreground/background depth)
+ * GSAP scroll animations:
+ *   1. Pinned horizontal scroll — Dev mode, desktop ≥768px
+ *      (scroll hijack: vertical → horizontal → vertical)
+ *   2. Skills depth parallax (#skills recedes as #projects slides in)
+ *   3. Heading parallax
  *   4. Fade-up for [data-reveal] elements
  *
- * All effects behind prefers-reduced-motion check.
- * Pin and horizontal scroll disabled below 768px (fallback to smooth touch scroll).
+ * Bug fixes vs old implementation:
+ *   • Synchronous measurement via void track.offsetWidth (no rAF race)
+ *   • kill → refresh → init order on mode toggle (never refresh while pin-spacer is live)
+ *   • pinSpacing:true for predictable spacer height
+ *   • onRefresh callback recalculates scrollDist on resize
+ *   • UI mode is completely untouched — no pin, no scroll hijack
  */
 
 (function () {
+  'use strict';
+
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isMobile      = () => window.innerWidth < 768;
 
-  // ── Fallback ─────────────────────────────────────────
+  // ── Fallback: instantly reveal all [data-reveal] elements ─────
   function fallbackReveal() {
     document.querySelectorAll('[data-reveal]').forEach(el => {
       el.style.opacity   = '1';
@@ -22,282 +29,217 @@
     });
   }
 
-  // ── 1. Simple fade-up for [data-reveal] ─────────────
+  // ── 1. Fade-up for [data-reveal] ──────────────────────────────
   function initFadeReveals() {
     if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
       fallbackReveal();
       return;
     }
-
-    const elements = document.querySelectorAll('[data-reveal]');
-
-    elements.forEach(el => {
-      if (reducedMotion) {
-        el.style.opacity   = '1';
-        el.style.transform = 'none';
-        return;
-      }
-
-      gsap.fromTo(
-        el,
+    document.querySelectorAll('[data-reveal]').forEach(el => {
+      if (reducedMotion) { el.style.opacity = '1'; el.style.transform = 'none'; return; }
+      gsap.fromTo(el,
         { opacity: 0, y: 24 },
         {
           opacity: 1, y: 0,
-          duration: 0.6,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: el,
-            start: 'top 88%',
-            once: true,
-          },
+          duration: 0.6, ease: 'power2.out',
+          scrollTrigger: { trigger: el, start: 'top 88%', once: true },
         }
       );
     });
   }
 
-  // ── 2. Heading parallax ─────────────────────────────
+  // ── 2. Heading parallax ──────────────────────────────────────
   function initParallax() {
     if (reducedMotion || isMobile()) return;
     if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
-
     document.querySelectorAll('.section__heading').forEach(heading => {
       const section = heading.closest('section');
       if (!section || section.id === 'projects' || section.id === 'skills') return;
-
       gsap.fromTo(heading,
         { y: 12 },
-        {
-          y: -12,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: section,
-            start: 'top bottom',
-            end:   'bottom top',
-            scrub: true,
-          },
-        }
+        { y: -12, ease: 'none',
+          scrollTrigger: { trigger: section, start: 'top bottom', end: 'bottom top', scrub: true } }
       );
     });
   }
 
-  // ── 3. Pinned Layer Stacking: Skills → Projects ──────
-  let skillsPinTrigger = null;
+  // ── 3. Skills depth parallax ─────────────────────────────────
   let skillsParallaxTween = null;
 
-  function killSkillsLayerStack() {
-    if (skillsPinTrigger) {
-      skillsPinTrigger.kill();
-      skillsPinTrigger = null;
-    }
-    if (skillsParallaxTween) {
-      skillsParallaxTween.kill();
-      skillsParallaxTween = null;
-    }
+  function killSkillsParallax() {
+    if (skillsParallaxTween) { skillsParallaxTween.kill(); skillsParallaxTween = null; }
   }
 
-  function initSkillsLayerStack() {
-    killSkillsLayerStack();
-
+  function initSkillsParallax() {
+    killSkillsParallax();
     if (reducedMotion || isMobile()) return;
     if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
-
-    const skillsSec = document.getElementById('skills');
+    const skillsSec   = document.getElementById('skills');
     const projectsSec = document.getElementById('projects');
-
     if (!skillsSec || !projectsSec) return;
-
-    // Pin the skills section in place as the user scrolls past it
-    skillsPinTrigger = ScrollTrigger.create({
-      trigger: skillsSec,
-      start: 'top top',
-      endTrigger: projectsSec,
-      end: 'top top',
-      pin: true,
-      pinSpacing: false,
-      anticipatePin: 1,
-      invalidateOnRefresh: true,
-    });
-
-    // Subtle depth parallax effect on skills content as projects layer covers it
     const skillsInner = skillsSec.querySelector('.section-inner');
-    if (skillsInner) {
-      skillsParallaxTween = gsap.to(skillsInner, {
-        y: -30,
-        scale: 0.96,
-        opacity: 0.5,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: projectsSec,
-          start: 'top bottom',
-          end: 'top top',
-          scrub: true,
-        },
-      });
-    }
+    if (!skillsInner) return;
+    skillsParallaxTween = gsap.to(skillsInner, {
+      y: -30, scale: 0.96, opacity: 0.5, ease: 'none',
+      scrollTrigger: { trigger: projectsSec, start: 'top bottom', end: 'top top', scrub: true },
+    });
   }
 
-  // ── 4. Horizontal scroll for projects (Dev Mode: 8 Projects Pin & Scrub) ──
-  let horizontalTween = null;
-  let horizontalTrigger = null;
+  // ── 4. Horizontal scroll pin — Dev mode, desktop only ────────
+  //
+  //  When #projects hits viewport top the page pins.
+  //  Vertical scroll drives the project cards sideways via transform.
+  //  When the last card is visible the pin releases and vertical
+  //  scrolling resumes normally.
+  //
+  //  Key correctness rules:
+  //  a) Measure AFTER gsap.set(x:0) + void offsetWidth (synchronous reflow).
+  //     Old code used requestAnimationFrame which ran after layout could change.
+  //  b) Kill the trigger with kill(true) before any refresh call.
+  //     kill(true) removes the pin-spacer DOM node; refresh() on a live spacer
+  //     double-counts height and creates the black empty space bug.
+  //  c) onRefresh recalculates scrollDist so window resize always stays accurate.
+  // ─────────────────────────────────────────────────────────────
+  let hTween   = null;
+  let hTrigger = null;
 
   function killHorizontalScroll() {
-    if (horizontalTween) {
-      horizontalTween.kill();
-      horizontalTween = null;
-    }
-    if (horizontalTrigger) {
-      // Passing true instructs GSAP to revert the pin-spacer and restore all inline styles
-      horizontalTrigger.kill(true);
-      horizontalTrigger = null;
-    }
-
-    const devTrack = document.getElementById('dev-projects-track');
-    if (devTrack && typeof gsap !== 'undefined') {
-      gsap.set(devTrack, { clearProps: 'all' });
-    }
+    if (hTrigger) { hTrigger.kill(true); hTrigger = null; }  // true = revert pin-spacer
+    if (hTween)   { hTween.kill();       hTween   = null; }
+    const track = document.getElementById('dev-projects-track');
+    if (track && typeof gsap !== 'undefined') gsap.set(track, { clearProps: 'x,transform' });
   }
 
   function initHorizontalScroll() {
-    killHorizontalScroll();
+    killHorizontalScroll(); // always kill first (sync)
 
     if (reducedMotion || isMobile()) return;
     if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+    if (!document.body.classList.contains('is-dev-mode')) return;
 
-    const isDev = document.body.classList.contains('is-dev-mode');
-
-    // UI mode uses the responsive 3-column showcase on desktop (no artificial pin gap)
-    if (!isDev) return;
-
-    const track = document.getElementById('dev-projects-track');
+    const track   = document.getElementById('dev-projects-track');
     const section = document.getElementById('projects');
-
     if (!track || !section) return;
 
-    // Reset x position cleanly before measurement
+    // Reset any transform so scrollWidth reflects natural layout width
     gsap.set(track, { x: 0, clearProps: 'transform' });
+    void track.offsetWidth; // force synchronous reflow — measurement is now accurate
 
-    requestAnimationFrame(() => {
-      const trackWidth = track.scrollWidth;
-      const windowWidth = window.innerWidth;
-      const extraOffset = Math.max(60, windowWidth * 0.08);
-      const scrollDist = Math.max(0, trackWidth - windowWidth + extraOffset);
+    function getScrollDist() {
+      // Extra padding = the track's CSS padding-right so last card clears the edge
+      const pr = parseFloat(getComputedStyle(track).paddingRight) || 64;
+      return Math.max(0, track.scrollWidth - window.innerWidth + pr);
+    }
 
-      if (scrollDist <= 0) return;
+    const scrollDist = getScrollDist();
+    if (scrollDist <= 0) return;
 
-      horizontalTween = gsap.to(track, {
-        x: -scrollDist,
-        ease: 'none',
-        paused: true,
-      });
+    hTween = gsap.to(track, { x: -scrollDist, ease: 'none', paused: true });
 
-      horizontalTrigger = ScrollTrigger.create({
-        trigger: section,
-        start: 'top top',
-        end: () => `+=${scrollDist * 1.15}`,
-        pin: true,
-        anticipatePin: 1,
-        scrub: 0.8,
-        animation: horizontalTween,
-        invalidateOnRefresh: true,
-        onLeave: () => {
-          gsap.set(track, { x: -scrollDist });
-        },
-        onLeaveBack: () => {
+    hTrigger = ScrollTrigger.create({
+      trigger: section,
+      start: 'top top',
+      end: () => `+=${getScrollDist()}`,
+      pin: true,
+      pinSpacing: true,   // GSAP adds a spacer equal to scrollDist — vertical resume is correct
+      anticipatePin: 1,
+      scrub: 1,
+      animation: hTween,
+      invalidateOnRefresh: true,
+      onRefresh() {
+        // After resize, recalculate the scroll distance and update the tween
+        const dist = getScrollDist();
+        if (hTween && dist > 0) {
           gsap.set(track, { x: 0 });
-        },
-      });
+          hTween.vars.x = -dist;
+          hTween.invalidate().progress(0);
+        }
+      },
     });
   }
 
-  // ── Entry ────────────────────────────────────────────
+  // ── Entry ────────────────────────────────────────────────────
   function init() {
     if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-      fallbackReveal();
-      return;
+      fallbackReveal(); return;
     }
-
     gsap.registerPlugin(ScrollTrigger);
-
     initFadeReveals();
     initParallax();
-    initSkillsLayerStack();
+    initSkillsParallax();
     initHorizontalScroll();
   }
 
-  // ── Boot timing ──────────────────────────────────────
-  window.addEventListener('preloaderDone', () => {
-    setTimeout(init, 300);
-  });
-
+  // ── Boot (two paths: with/without preloader) ─────────────────
+  window.addEventListener('preloaderDone', () => setTimeout(init, 300));
   window.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-      if (typeof ScrollTrigger !== 'undefined') {
-        init();
-      }
-    }, 600);
+    setTimeout(() => { if (typeof ScrollTrigger !== 'undefined') init(); }, 600);
   });
 
-  // Re-init horizontal scroll, skills layer stack, and refresh on mode toggle
+  // ── Mode toggle (UI ⇄ Dev) ────────────────────────────────────
+  //
+  //  Safe order:
+  //    1. kill horizontal scroll (sync, removes pin-spacer immediately)
+  //    2. kill skills parallax
+  //    3. If in projects section, snap scroll to top of section
+  //    4. refresh() — now safe because no pin-spacer exists
+  //    5. After wipe animation (~460ms), re-init everything
+  // ─────────────────────────────────────────────────────────────
   window.addEventListener('modeChanged', (e) => {
     if (typeof ScrollTrigger === 'undefined') return;
 
     const incomingMode = e.detail && e.detail.mode;
-    const projectsSection = document.getElementById('projects');
+    const projectsSec  = document.getElementById('projects');
 
-    // 1. Immediately kill Dev horizontal scroll with revert=true so the pin-spacer is removed cleanly
+    // Steps 1 & 2: kill triggers synchronously
     killHorizontalScroll();
+    killSkillsParallax();
 
-    // 2. If the user was viewing or scrolled into the projects section, adjust scroll
-    // so they are neatly at the top of the projects section in the new mode
-    if (projectsSection) {
-      const rect = projectsSection.getBoundingClientRect();
-      const inProjects = rect.top < 150 && rect.bottom > 150;
-      if (inProjects) {
-        const navH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 72;
-        const targetY = window.scrollY + rect.top - navH;
-        const clampedY = Math.max(0, targetY);
-        window.scrollTo({ top: clampedY, behavior: 'instant' });
-        if (window.__lenis) {
-          window.__lenis.scrollTo(clampedY, { immediate: true });
-        }
+    // Step 3: snap scroll position if user is inside projects
+    if (projectsSec) {
+      const rect = projectsSec.getBoundingClientRect();
+      if (rect.top < 150 && rect.bottom > 150) {
+        const navH    = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 72;
+        const targetY = Math.max(0, window.scrollY + rect.top - navH);
+        window.scrollTo({ top: targetY, behavior: 'instant' });
+        if (window.__lenis) window.__lenis.scrollTo(targetY, { immediate: true });
       }
     }
 
-    // Refresh ScrollTrigger and Lenis so geometry is accurate
+    // Step 4: refresh — safe now that pin-spacer is gone
     ScrollTrigger.refresh();
-    if (window.__lenis) {
-      window.__lenis.resize();
-    }
+    if (window.__lenis) window.__lenis.resize();
 
-    // 3. After the wipe transition completes, re-initialize if switching back to Dev
+    // Step 5: re-init after wipe transition completes
     setTimeout(() => {
-      initSkillsLayerStack();
+      initSkillsParallax();
       initHorizontalScroll();
       ScrollTrigger.refresh();
-      if (window.__lenis) {
-        window.__lenis.resize();
-      }
+      if (window.__lenis) window.__lenis.resize();
 
-      // Ensure any newly visible [data-reveal] elements in the active mode are shown
+      // Reveal any [data-reveal] elements in the newly active mode
       if (!reducedMotion) {
-        const modeSelector = incomingMode === 'dev' ? '.mode-dev' : '.mode-ui';
-        document.querySelectorAll(`${modeSelector} [data-reveal], ${modeSelector}[data-reveal]`).forEach(el => {
+        const sel = incomingMode === 'dev' ? '.mode-dev' : '.mode-ui';
+        document.querySelectorAll(`${sel} [data-reveal], ${sel}[data-reveal]`).forEach(el => {
           gsap.to(el, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' });
         });
       }
-    }, 450);
+    }, 460);
   });
 
-  // Handle window resize smoothly
+  // ── Resize — debounced, kill → init order ───────────────────
   let resizeTimer;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
-      if (typeof ScrollTrigger !== 'undefined') {
-        initSkillsLayerStack();
-        initHorizontalScroll();
-        ScrollTrigger.refresh();
-      }
-    }, 250);
+      if (typeof ScrollTrigger === 'undefined') return;
+      killHorizontalScroll();
+      killSkillsParallax();
+      ScrollTrigger.refresh();
+      initSkillsParallax();
+      initHorizontalScroll();
+      ScrollTrigger.refresh();
+    }, 300);
   });
 })();
+
