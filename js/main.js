@@ -104,7 +104,7 @@
           const id = entry.target.getAttribute('id');
           navLinks.forEach(link => {
             const href = link.getAttribute('href');
-            link.style.color = href === `#${id}` ? 'var(--white)' : '';
+            link.style.color = href === `#${id}` ? 'var(--neon)' : '';
           });
         }
       });

@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Ahmed Mohamed — AI Developer / CS Student</title>
-  <meta name="description" content="Ahmed Mohamed Khalaf — 4th-year CS student at Ain Shams University, AI developer, and UI/UX designer. Head of UI/UX at ConnectX. Building AI systems, cross-platform apps, and delightful interfaces.">
-  <meta property="og:title" content="Ahmed Mohamed — Developer &amp; Designer">
-  <meta property="og:description" content="Portfolio of Ahmed Mohamed Khalaf — CS student, AI developer, and UI/UX designer.">
+  <title>Ahmed Mohamed - AI Developer / CS Student</title>
+  <meta name="description"
+    content="Ahmed Mohamed Khalaf - 4th-year CS student at Ain Shams University, AI developer, and UI/UX designer. Head of UI/UX at ConnectX. Building AI systems, cross-platform apps, and delightful interfaces.">
+  <meta property="og:title" content="Ahmed Mohamed - Developer &amp; Designer">
+  <meta property="og:description"
+    content="Portfolio of Ahmed Mohamed Khalaf - CS student, AI developer, and UI/UX designer.">
   <meta property="og:type" content="website">
 
   <!-- Force scroll to top before anything renders (prevents browser restoring to CV) -->
-  <script>if('scrollRestoration'in history)history.scrollRestoration='manual';window.scrollTo(0,0);</script>
+  <script>if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; window.scrollTo(0, 0);</script>
 
   <link rel="stylesheet" href="css/style.css">
 
@@ -20,13 +23,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
 </head>
+
 <body class="is-dev-mode">
 
   <!-- ── Grain Overlay ── -->
   <div class="grain" aria-hidden="true"></div>
 
   <!-- ── Custom Cursor ── -->
-  <div class="cursor-dot"  aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
   <div class="cursor-ring" aria-hidden="true"></div>
 
   <!-- ── Preloader (progress bar, no number) ── -->
@@ -47,18 +51,19 @@
   <header class="nav" id="site-nav">
     <div class="nav__inner">
 
-      <a href="#hero" class="nav__logo" aria-label="Ahmed Mohamed — home">AHMED.MK</a>
+      <a href="#hero" class="nav__logo" aria-label="Ahmed Mohamed - home">AHMED.MK</a>
 
       <nav class="nav__links" aria-label="Main navigation">
-        <a href="#about"    class="nav__link" data-scramble aria-label="About section">about/</a>
+        <a href="#about" class="nav__link" data-scramble aria-label="About section">about/</a>
         <a href="#projects" class="nav__link" data-scramble aria-label="Projects section">projects/</a>
-        <a href="#cv"       class="nav__link" data-scramble aria-label="CV section">cv/</a>
-        <a href="#contact"  class="nav__link" data-scramble aria-label="Contact section">contact/</a>
+        <a href="#cv" class="nav__link" data-scramble aria-label="CV section">cv/</a>
+        <a href="#contact" class="nav__link" data-scramble aria-label="Contact section">contact/</a>
       </nav>
 
       <div class="mode-toggle" id="mode-toggle" role="group" aria-label="Switch portfolio mode">
-        <button class="mode-toggle__btn"           id="btn-ui"  data-mode="ui"  aria-pressed="false" data-scramble>UI</button>
-        <button class="mode-toggle__btn is-active" id="btn-dev" data-mode="dev" aria-pressed="true"  data-scramble>Dev</button>
+        <button class="mode-toggle__btn" id="btn-ui" data-mode="ui" aria-pressed="false" data-scramble>UI</button>
+        <button class="mode-toggle__btn is-active" id="btn-dev" data-mode="dev" aria-pressed="true"
+          data-scramble>Dev</button>
       </div>
 
     </div>
@@ -66,762 +71,869 @@
 
   <main id="main-content">
 
-  <!-- ══════════════════════════════════════
+    <!-- ══════════════════════════════════════
        HERO — dark
   ══════════════════════════════════════ -->
-  <section class="hero" id="hero" data-theme="dark" aria-label="Hero">
+    <section class="hero" id="hero" data-theme="dark" aria-label="Hero">
+      <div class="hero__grid-bg" aria-hidden="true"></div>
 
-    <!-- UI Mode Hero -->
-    <div class="mode-ui" data-reveal>
-      <p class="hero__eyebrow">UI / UX Designer</p>
-      <h1 class="hero__name" data-scramble>Ahmed<br>Mohamed</h1>
-      <p class="hero__role">Crafting interfaces that feel&nbsp;alive.</p>
-      <p class="hero__desc">
-        4th-year CS student at Ain Shams University and Head of UI&thinsp;/&thinsp;UX at ConnectX.
-        I design digital products from wireframe to high-fidelity prototype.
-      </p>
-      <div class="hero__cta-group">
-        <a href="#projects" class="btn btn--primary">View Gallery</a>
-        <a href="#cv"       class="btn btn--outline">View CV</a>
+      <!-- UI Mode Hero -->
+      <div class="mode-ui hero__content" data-reveal>
+        <!-- <div class="hero__badge">
+        <span class="badge-text">STATUS: READY FOR 2025/2026 ROLES</span>
+        <span class="badge-code">[CONNECTX // UI/UX LEAD]</span>
+      </div> -->
+        <p class="hero__eyebrow">UI / UX Designer &amp; Design Lead</p>
+        <h1 class="hero__name" data-scramble>Ahmed<br><span class="hero__name-accent">Mohamed</span></h1>
+        <p class="hero__role">Crafting interfaces that feel&nbsp;<span class="text-neon-highlight">alive.</span></p>
+        <p class="hero__desc">
+          4th-year CS student at Ain Shams University and Head of UI&thinsp;/&thinsp;UX at ConnectX.
+          I design digital products from wireframe to high-fidelity prototype.
+        </p>
+        <div class="hero__cta-group">
+          <a href="#projects" class="btn btn--primary">View Gallery ↗</a>
+          <a href="#cv" class="btn btn--outline">View CV ↗</a>
+        </div>
+        <div class="hero__scroll-hint" aria-hidden="true">Scroll to explore</div>
       </div>
-      <div class="hero__scroll-hint" aria-hidden="true">Scroll to explore</div>
+
+      <!-- Dev Mode Hero -->
+      <div class="mode-dev hero__content" data-reveal>
+        <!-- <div class="hero__badge">
+        <span class="badge-dot"></span>
+        <span class="badge-text">SYSTEM READY // ACCEPTING HIGH-IMPACT ROLES</span>
+        <span class="badge-code">[CAIRO, EG // 30°N]</span>
+      </div> -->
+        <p class="hero__eyebrow">AI Developer / CS Student</p>
+        <h1 class="hero__name" data-scramble>Ahmed<br><span class="hero__name-accent">Mohamed</span></h1>
+        <p class="hero__role">Building intelligence from the ground&nbsp;<span class="text-neon-highlight">up.</span>
+        </p>
+        <p class="hero__desc">
+          4th-year CS student at Ain Shams University. I build AI/ML systems with CUDA and C++,
+          cross-platform apps with Flutter and Qt, and everything in between.
+        </p>
+        <div class="hero__cta-group">
+          <a href="#projects" class="btn btn--primary">View Projects ↗</a>
+          <a href="#cv" class="btn btn--outline">View CV ↗</a>
+        </div>
+        <div class="hero__scroll-hint" aria-hidden="true">Scroll to explore</div>
+      </div>
+
+    </section>
+
+    <!-- ── Slanted Inter-Section Ticker Tape (Bridges Hero & About) ── -->
+    <div class="slant-ticker-wrap" aria-hidden="true">
+      <div class="slant-ticker">
+        <div class="slant-ticker__inner mode-ui">
+          <span>★ PRODUCT DESIGN &amp; UI/UX</span>
+          <span>★ FIGMA DESIGN SYSTEMS</span>
+          <span>★ INTERACTIVE PROTOTYPING</span>
+          <span>★ HEAD OF DESIGN AT CONNECTX</span>
+          <span>★ DESIGN TO PRODUCTION CODE</span>
+          <span>★ PRODUCT DESIGN &amp; UI/UX</span>
+          <span>★ FIGMA DESIGN SYSTEMS</span>
+          <span>★ INTERACTIVE PROTOTYPING</span>
+          <span>★ HEAD OF DESIGN AT CONNECTX</span>
+          <span>★ DESIGN TO PRODUCTION CODE</span>
+        </div>
+        <div class="slant-ticker__inner mode-dev">
+          <span>★ AI &amp; SYSTEMS ARCHITECTURE</span>
+          <span>★ CUDA C++ GPU KERNELS</span>
+          <span>★ HIGH-PERFORMANCE COMPUTING</span>
+          <span>★ FLUTTER &amp; QT6 APPS</span>
+          <span>★ FCIS OS KERNEL IN C</span>
+          <span>★ AI &amp; SYSTEMS ARCHITECTURE</span>
+          <span>★ CUDA C++ GPU KERNELS</span>
+          <span>★ HIGH-PERFORMANCE COMPUTING</span>
+          <span>★ FLUTTER &amp; QT6 APPS</span>
+          <span>★ FCIS OS KERNEL IN C</span>
+        </div>
+      </div>
     </div>
 
-    <!-- Dev Mode Hero -->
-    <div class="mode-dev" data-reveal>
-      <p class="hero__eyebrow">AI Developer / CS Student</p>
-      <h1 class="hero__name" data-scramble>Ahmed<br>Mohamed</h1>
-      <p class="hero__role">Building intelligence from the ground&nbsp;up.</p>
-      <p class="hero__desc">
-        4th-year CS student at Ain Shams University. I build AI/ML systems with CUDA and C++,
-        cross-platform apps with Flutter and Qt, and everything in between.
-      </p>
-      <div class="hero__cta-group">
-        <a href="#projects" class="btn btn--primary">View Projects</a>
-        <a href="#cv"       class="btn btn--outline">View CV</a>
-      </div>
-      <div class="hero__scroll-hint" aria-hidden="true">Scroll to explore</div>
-    </div>
-
-  </section>
-
-  <!-- ══════════════════════════════════════
+    <!-- ══════════════════════════════════════
        ABOUT — light
   ══════════════════════════════════════ -->
-  <section id="about" data-theme="light" aria-labelledby="about-heading">
-    <div class="section-inner">
+    <section id="about" data-theme="light" aria-labelledby="about-heading">
+      <div class="section-inner">
 
-      <!-- UI About -->
-      <div class="mode-ui">
-        <p class="section__label" data-reveal>About</p>
-        <h2 class="section__heading" id="about-heading" data-scramble data-reveal>about/</h2>
+        <!-- UI About -->
+        <div class="mode-ui">
+          <p class="section__label" data-reveal>About</p>
+          <h2 class="section__heading" id="about-heading" data-scramble data-reveal>about/</h2>
 
-        <div class="about__grid">
-          <div class="about__photo-wrap" data-reveal>
-            <img src="My Photo.jpg" alt="Ahmed Mohamed" class="about__photo" loading="lazy">
-          </div>
-          <div class="about__text-block">
-            <p class="about__body" data-reveal>
-              I'm Ahmed Mohamed Khalaf, a 4th-year Computer Science student at Ain Shams University,
-              where design and engineering overlap. Currently Head of UI&thinsp;/&thinsp;UX &amp; Design at
-              <strong>ConnectX</strong>, a student-led tech organization.
-            </p>
-            <p class="about__body" data-reveal>
-              My design work spans mobile apps, brand identity, and end-to-end product design.
-              I move from research and wireframes through Figma prototypes to final handoff —
-              keeping every decision grounded in both aesthetics and usability.
-            </p>
-            <div class="about__meta" data-reveal>
-              <div class="about__meta-item">
-                <span class="about__meta-key">Location</span>
-                <span class="about__meta-val">Cairo, Egypt</span>
-              </div>
-              <div class="about__meta-item">
-                <span class="about__meta-key">Role</span>
-                <span class="about__meta-val">Head of UI/UX &amp; Design — ConnectX</span>
-              </div>
-              <div class="about__meta-item">
-                <span class="about__meta-key">Education</span>
-                <span class="about__meta-val">B.Sc. CS — Ain Shams University (2022–2026)</span>
-              </div>
-              <div class="about__meta-item">
-                <span class="about__meta-key">Profiles</span>
-                <span class="about__meta-val">
-                  <a href="https://www.behance.net/" target="_blank" class="body-link">Behance</a>
-                  &ensp;·&ensp;
-                  <a href="https://dribbble.com/" target="_blank" class="body-link">Dribbble</a>
-                </span>
+          <div class="about__grid">
+            <div class="about__photo-wrap" data-reveal>
+              <img src="My Photo.jpg" alt="Ahmed Mohamed" class="about__photo" loading="lazy">
+            </div>
+            <div class="about__text-block">
+              <p class="about__body" data-reveal>
+                I'm Ahmed Mohamed Khalaf, a 4th-year Computer Science student at Ain Shams University,
+                where design and engineering overlap. Currently Head of UI&thinsp;/&thinsp;UX &amp; Design at
+                <strong>ConnectX</strong>, a student-led tech organization.
+              </p>
+              <p class="about__body" data-reveal>
+                My design work spans mobile apps, brand identity, and end-to-end product design.
+                I move from research and wireframes through Figma prototypes to final handoff —
+                keeping every decision grounded in both aesthetics and usability.
+              </p>
+              <div class="about__meta" data-reveal>
+                <div class="about__meta-item">
+                  <span class="about__meta-key">Location</span>
+                  <span class="about__meta-val">Cairo, Egypt</span>
+                </div>
+                <div class="about__meta-item">
+                  <span class="about__meta-key">Role</span>
+                  <span class="about__meta-val">Head of UI/UX &amp; Design - ConnectX</span>
+                </div>
+                <div class="about__meta-item">
+                  <span class="about__meta-key">Education</span>
+                  <span class="about__meta-val">B.Sc. CS - Ain Shams University (2022–2026)</span>
+                </div>
+                <div class="about__meta-item">
+                  <span class="about__meta-key">Profiles</span>
+                  <span class="about__meta-val">
+                    <a href="https://www.behance.net/" target="_blank" class="body-link">Behance</a>
+                    &ensp;·&ensp;
+                    <a href="https://dribbble.com/" target="_blank" class="body-link">Dribbble</a>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Dev About -->
-      <div class="mode-dev">
-        <p class="section__label" data-reveal>About</p>
-        <h2 class="section__heading" data-scramble data-reveal>dev.experience( )</h2>
+        <!-- Dev About -->
+        <div class="mode-dev">
+          <p class="section__label" data-reveal>About</p>
+          <h2 class="section__heading" data-scramble data-reveal>dev.experience( )</h2>
 
-        <div class="about__grid">
-          <div class="about__photo-wrap" data-reveal>
-            <img src="My Photo.jpg" alt="Ahmed Mohamed" class="about__photo" loading="lazy">
-          </div>
-          <div class="about__text-block">
-            <p class="about__body" data-reveal>
-              I'm Ahmed Mohamed Khalaf, a 4th-year Computer Science student at Ain Shams University.
-              I build AI/ML systems in C++ and Python — including CUDA-accelerated GPU kernels,
-              custom neural nets from scratch, and Streamlit ML apps. Currently exploring
-              large model inference and GPU-parallel training pipelines.
-            </p>
-            <p class="about__body" data-reveal>
-              Beyond AI, I build cross-platform apps with Flutter and Qt, 2D games with SFML and Godot,
-              and have dug deep into OS internals with a custom C kernel that runs in QEMU.
-              Head of UI&thinsp;/&thinsp;UX &amp; Design at <strong>ConnectX</strong> — bridging engineering and product.
-            </p>
-            <div class="about__meta" data-reveal>
-              <div class="about__meta-item">
-                <span class="about__meta-key">Location</span>
-                <span class="about__meta-val">Cairo, Egypt</span>
-              </div>
-              <div class="about__meta-item">
-                <span class="about__meta-key">Role</span>
-                <span class="about__meta-val">Head of UI/UX &amp; Design — ConnectX</span>
-              </div>
-              <div class="about__meta-item">
-                <span class="about__meta-key">Education</span>
-                <span class="about__meta-val">B.Sc. CS — Ain Shams University (2022–2026)</span>
-              </div>
-              <div class="about__meta-item">
-                <span class="about__meta-key">GitHub</span>
-                <span class="about__meta-val">
-                  <a href="https://github.com/ZVAXEROWS" target="_blank" class="body-link">github.com/ZVAXEROWS</a>
-                </span>
+          <div class="about__grid">
+            <div class="about__photo-wrap" data-reveal>
+              <img src="My Photo.jpg" alt="Ahmed Mohamed" class="about__photo" loading="lazy">
+            </div>
+            <div class="about__text-block">
+              <p class="about__body" data-reveal>
+                I'm Ahmed Mohamed Khalaf, a 4th-year Computer Science student at Ain Shams University.
+                I build AI/ML systems in C++ and Python - including CUDA-accelerated GPU kernels,
+                custom neural nets from scratch, and Streamlit ML apps. Currently exploring
+                large model inference and GPU-parallel training pipelines.
+              </p>
+              <p class="about__body" data-reveal>
+                Beyond AI, I build cross-platform apps with Flutter and Qt, 2D games with SFML and Godot,
+                and have dug deep into OS internals with a custom C kernel that runs in QEMU.
+                Head of UI&thinsp;/&thinsp;UX &amp; Design at <strong>ConnectX</strong> - bridging engineering and
+                product.
+              </p>
+              <div class="about__meta" data-reveal>
+                <div class="about__meta-item">
+                  <span class="about__meta-key">Location</span>
+                  <span class="about__meta-val">Cairo, Egypt</span>
+                </div>
+                <div class="about__meta-item">
+                  <span class="about__meta-key">Role</span>
+                  <span class="about__meta-val">Head of UI/UX &amp; Design - ConnectX</span>
+                </div>
+                <div class="about__meta-item">
+                  <span class="about__meta-key">Education</span>
+                  <span class="about__meta-val">B.Sc. CS - Ain Shams University (2022–2026)</span>
+                </div>
+                <div class="about__meta-item">
+                  <span class="about__meta-key">GitHub</span>
+                  <span class="about__meta-val">
+                    <a href="https://github.com/ZVAXEROWS" target="_blank" class="body-link">github.com/ZVAXEROWS</a>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
+      </div>
+    </section>
+
+    <!-- ── Slanted Inter-Section Connector (About to Skills) ── -->
+    <div class="section-connector" aria-hidden="true">
+      <div class="section-connector__stamp">
+        <span class="connector-index">[02 / 05]</span>
+        <span class="connector-title mode-ui">// INTERACTION_TOOLKIT &amp; DESIGN_SPECS</span>
+        <span class="connector-title mode-dev">// SYSTEM_CAPABILITIES &amp; STACK_MATRIX</span>
+        <span class="connector-coord">30.0444° N, 31.2357° E</span>
+      </div>
     </div>
-  </section>
 
-  <!-- ══════════════════════════════════════
-       SKILLS / TOOLS — dark
+    <!-- ══════════════════════════════════════
+       SKILLS / TOOLS - dark
   ══════════════════════════════════════ -->
-  <section id="skills" class="section--skills" data-theme="dark" aria-labelledby="skills-heading">
-    <div class="section-inner">
+    <section id="skills" class="section--skills" data-theme="dark" aria-labelledby="skills-heading">
+      <div class="section-inner">
 
-      <!-- UI Tools -->
-      <div class="mode-ui">
-        <p class="section__label" data-reveal>Toolkit</p>
-        <h2 class="section__heading" id="skills-heading" data-scramble data-reveal>tools.kit( )</h2>
-        <div class="skills__grid" data-reveal>
-          <div class="skill-tag"><span class="skill-tag__name">Figma</span><span class="skill-tag__sub">Primary</span></div>
-          <div class="skill-tag"><span class="skill-tag__name">Adobe XD</span><span class="skill-tag__sub">Prototyping</span></div>
-          <div class="skill-tag"><span class="skill-tag__name">Framer</span><span class="skill-tag__sub">Interactive</span></div>
-          <div class="skill-tag"><span class="skill-tag__name">Spline</span><span class="skill-tag__sub">3D / Web</span></div>
-          <div class="skill-tag"><span class="skill-tag__name">Photoshop</span><span class="skill-tag__sub">Editing</span></div>
-          <div class="skill-tag"><span class="skill-tag__name">Illustrator</span><span class="skill-tag__sub">Vector</span></div>
-          <div class="skill-tag"><span class="skill-tag__name">After Effects</span><span class="skill-tag__sub">Motion</span></div>
-          <div class="skill-tag"><span class="skill-tag__name">Premiere Pro</span><span class="skill-tag__sub">Video</span></div>
-          <div class="skill-tag"><span class="skill-tag__name">Canva</span><span class="skill-tag__sub">Rapid</span></div>
+        <!-- UI Tools -->
+        <div class="mode-ui">
+          <p class="section__label" data-reveal>Toolkit</p>
+          <h2 class="section__heading" id="skills-heading" data-scramble data-reveal>tools.kit( )</h2>
+          <div class="skills__grid" data-reveal>
+            <div class="skill-tag"><span class="skill-tag__name">Figma</span><span class="skill-tag__sub">Primary</span>
+            </div>
+            <div class="skill-tag"><span class="skill-tag__name">Adobe XD</span><span
+                class="skill-tag__sub">Prototyping</span></div>
+            <div class="skill-tag"><span class="skill-tag__name">Framer</span><span
+                class="skill-tag__sub">Interactive</span></div>
+            <div class="skill-tag"><span class="skill-tag__name">Spline</span><span class="skill-tag__sub">3D /
+                Web</span></div>
+            <div class="skill-tag"><span class="skill-tag__name">Photoshop</span><span
+                class="skill-tag__sub">Editing</span></div>
+            <div class="skill-tag"><span class="skill-tag__name">Illustrator</span><span
+                class="skill-tag__sub">Vector</span></div>
+            <div class="skill-tag"><span class="skill-tag__name">After Effects</span><span
+                class="skill-tag__sub">Motion</span></div>
+            <div class="skill-tag"><span class="skill-tag__name">Premiere Pro</span><span
+                class="skill-tag__sub">Video</span></div>
+            <div class="skill-tag"><span class="skill-tag__name">Canva</span><span class="skill-tag__sub">Rapid</span>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <!-- Dev Stack — grouped clusters -->
-      <div class="mode-dev">
-        <p class="section__label" data-reveal>Stack</p>
-        <h2 class="section__heading" data-scramble data-reveal>skills.stack { }</h2>
+        <!-- Dev Stack — grouped clusters -->
+        <div class="mode-dev">
+          <p class="section__label" data-reveal>Stack</p>
+          <h2 class="section__heading" data-scramble data-reveal>skills.stack { }</h2>
 
-        <div class="skill-clusters" data-reveal>
+          <div class="skill-clusters" data-reveal>
 
-          <!-- Cluster 1: AI & Machine Learning -->
-          <div class="skill-cluster">
-            <p class="skill-cluster__label">AI &amp; Machine Learning</p>
-            <div class="skill-cluster__items">
-              <span class="skill-pill is-primary">Python</span>
-              <span class="skill-pill is-primary">NumPy</span>
-              <span class="skill-pill is-primary">Scikit-learn</span>
-              <span class="skill-pill">PyTorch</span>
-              <span class="skill-pill">Pandas</span>
-              <span class="skill-pill">Neural Networks</span>
+            <!-- Cluster 1: AI & Machine Learning -->
+            <div class="skill-cluster">
+              <p class="skill-cluster__label">AI &amp; Machine Learning</p>
+              <div class="skill-cluster__items">
+                <span class="skill-pill is-primary">Python</span>
+                <span class="skill-pill is-primary">NumPy</span>
+                <span class="skill-pill is-primary">Scikit-learn</span>
+                <span class="skill-pill">PyTorch</span>
+                <span class="skill-pill">Pandas</span>
+                <span class="skill-pill">Neural Networks</span>
+              </div>
             </div>
-          </div>
 
-          <!-- Cluster 2: High-Performance Computing (HPC) -->
-          <div class="skill-cluster">
-            <p class="skill-cluster__label">High-Performance Computing</p>
-            <div class="skill-cluster__items">
-              <span class="skill-pill is-primary">CUDA / C++</span>
-              <span class="skill-pill is-primary">GPU Kernels</span>
-              <span class="skill-pill">Parallel Computing</span>
-              <span class="skill-pill">Memory Coalescing</span>
+            <!-- Cluster 2: High-Performance Computing (HPC) -->
+            <div class="skill-cluster">
+              <p class="skill-cluster__label">High-Performance Computing</p>
+              <div class="skill-cluster__items">
+                <span class="skill-pill is-primary">CUDA / C++</span>
+                <span class="skill-pill is-primary">GPU Kernels</span>
+                <span class="skill-pill">Parallel Computing</span>
+                <span class="skill-pill">Memory Coalescing</span>
+              </div>
             </div>
-          </div>
 
-          <!-- Cluster 3: Software Development -->
-          <div class="skill-cluster">
-            <p class="skill-cluster__label">Software Development</p>
-            <div class="skill-cluster__items">
-              <span class="skill-pill is-primary">C++</span>
-              <span class="skill-pill is-primary">Java</span>
-              <span class="skill-pill is-primary">Flutter</span>
-              <span class="skill-pill is-primary">Qt 6</span>
-              <span class="skill-pill">Dart</span>
-              <span class="skill-pill">OOP Design</span>
-              <span class="skill-pill">Data Structures</span>
+            <!-- Cluster 3: Software Development -->
+            <div class="skill-cluster">
+              <p class="skill-cluster__label">Software Development</p>
+              <div class="skill-cluster__items">
+                <span class="skill-pill is-primary">C++</span>
+                <span class="skill-pill is-primary">Java</span>
+                <span class="skill-pill is-primary">Flutter</span>
+                <span class="skill-pill is-primary">Qt 6</span>
+                <span class="skill-pill">Dart</span>
+                <span class="skill-pill">OOP Design</span>
+                <span class="skill-pill">Data Structures</span>
+              </div>
             </div>
-          </div>
 
-          <!-- Cluster 4: Operating Systems & Systems -->
-          <div class="skill-cluster">
-            <p class="skill-cluster__label">Operating Systems &amp; Systems</p>
-            <div class="skill-cluster__items">
-              <span class="skill-pill is-primary">C</span>
-              <span class="skill-pill is-primary">Linux</span>
-              <span class="skill-pill is-primary">QEMU</span>
-              <span class="skill-pill">Virtual Memory / Scheduling</span>
-              <span class="skill-pill">Assembly</span>
+            <!-- Cluster 4: Operating Systems & Systems -->
+            <div class="skill-cluster">
+              <p class="skill-cluster__label">Operating Systems &amp; Systems</p>
+              <div class="skill-cluster__items">
+                <span class="skill-pill is-primary">C</span>
+                <span class="skill-pill is-primary">Linux</span>
+                <span class="skill-pill is-primary">QEMU</span>
+                <span class="skill-pill">Virtual Memory / Scheduling</span>
+                <span class="skill-pill">Assembly</span>
+              </div>
             </div>
-          </div>
 
-          <!-- Cluster 5: Game Development -->
-          <div class="skill-cluster">
-            <p class="skill-cluster__label">Game Development</p>
-            <div class="skill-cluster__items">
-              <span class="skill-pill is-primary">Godot Engine</span>
-              <span class="skill-pill is-primary">SFML</span>
-              <span class="skill-pill is-primary">C++</span>
-              <span class="skill-pill is-primary">Unity</span>
-              <span class="skill-pill">2D Graphics</span>
-              <span class="skill-pill">Game Physics</span>
+            <!-- Cluster 5: Game Development -->
+            <div class="skill-cluster">
+              <p class="skill-cluster__label">Game Development</p>
+              <div class="skill-cluster__items">
+                <span class="skill-pill is-primary">Godot Engine</span>
+                <span class="skill-pill is-primary">SFML</span>
+                <span class="skill-pill is-primary">C++</span>
+                <span class="skill-pill is-primary">Unity</span>
+                <span class="skill-pill">2D Graphics</span>
+                <span class="skill-pill">Game Physics</span>
+              </div>
             </div>
-          </div>
 
-          <!-- Cluster 6: Developer Tools & DevOps -->
-          <div class="skill-cluster">
-            <p class="skill-cluster__label">Developer Tools &amp; DevOps</p>
-            <div class="skill-cluster__items">
-              <span class="skill-pill is-primary">Docker</span>
-              <span class="skill-pill is-primary">Git</span>
-              <span class="skill-pill is-primary">GitHub</span>
-              <span class="skill-pill is-primary">Linux CLI</span>
-              <span class="skill-pill is-primary">CMake</span>
-              <span class="skill-pill">VSCode</span>
-              <span class="skill-pill">GDB</span>
+            <!-- Cluster 6: Developer Tools & DevOps -->
+            <div class="skill-cluster">
+              <p class="skill-cluster__label">Developer Tools &amp; DevOps</p>
+              <div class="skill-cluster__items">
+                <span class="skill-pill is-primary">Docker</span>
+                <span class="skill-pill is-primary">Git</span>
+                <span class="skill-pill is-primary">GitHub</span>
+                <span class="skill-pill is-primary">Linux CLI</span>
+                <span class="skill-pill is-primary">CMake</span>
+                <span class="skill-pill">VSCode</span>
+                <span class="skill-pill">GDB</span>
+              </div>
             </div>
+
+            <!-- SVG center connector dot -->
+            <svg class="skill-clusters__connector" viewBox="0 0 40 40" aria-hidden="true">
+              <circle cx="20" cy="20" r="10" />
+              <text x="20" y="20">↔</text>
+            </svg>
+
           </div>
-
-          <!-- SVG center connector dot -->
-          <svg class="skill-clusters__connector" viewBox="0 0 40 40" aria-hidden="true">
-            <circle cx="20" cy="20" r="10"/>
-            <text x="20" y="20">↔</text>
-          </svg>
-
         </div>
-      </div>
 
+      </div>
+    </section>
+
+    <!-- ── Slanted Inter-Section Connector (Skills to Projects) ── -->
+    <div class="section-connector section-connector--projects" aria-hidden="true">
+      <div class="section-connector__stamp">
+        <span class="connector-index">[03 / 05]</span>
+        <span class="connector-title mode-ui">// CURATED_WORK_GALLERY</span>
+        <span class="connector-title mode-dev">// PRODUCTION_CODE_ARCHIVE</span>
+        <span class="connector-coord">[STATUS: COMPILED // STABLE]</span>
+      </div>
     </div>
-  </section>
 
-  <!-- ══════════════════════════════════════
+    <!-- ══════════════════════════════════════
        PROJECTS — light (Zajno Line 389 Horizontal Scroll Style)
   ══════════════════════════════════════ -->
-  <section id="projects" class="section--projects" data-theme="light" aria-labelledby="projects-heading">
-    <div class="projects-sticky-wrap" id="projects-sticky-wrap">
-      <div class="projects-section-inner">
+    <section id="projects" class="section--projects" data-theme="light" aria-labelledby="projects-heading">
+      <div class="projects-sticky-wrap" id="projects-sticky-wrap">
+        <div class="projects-section-inner">
 
-        <!-- Projects Header -->
-        <div class="projects-header" data-reveal>
-          <div>
-            <p class="section__label">Work</p>
-            <h2 class="section__heading" id="projects-heading" data-scramble>
-              <span class="mode-ui">gallery/</span>
-              <span class="mode-dev">projects/</span>
-            </h2>
+          <!-- Projects Header -->
+          <div class="projects-header" data-reveal>
+            <div>
+              <p class="section__label">Work</p>
+              <h2 class="section__heading" id="projects-heading" data-scramble>
+                <span class="mode-ui">gallery/</span>
+                <span class="mode-dev">projects/</span>
+              </h2>
+            </div>
+            <div class="projects-header__info">
+              <span class="projects-header__count mode-ui">03 projects</span>
+              <span class="projects-header__count mode-dev">08 projects</span>
+              <span class="projects-header__hint">Scroll to explore →</span>
+            </div>
           </div>
-          <div class="projects-header__info">
-            <span class="projects-header__count mode-ui">03 projects</span>
-            <span class="projects-header__count mode-dev">08 projects</span>
-            <span class="projects-header__hint">Scroll to explore →</span>
+
+          <!-- UI Mode Gallery Track (Zajno Card Style) -->
+          <div class="mode-ui projects-horizontal-container" id="ui-projects-outer">
+            <div class="projects-track" id="ui-projects-track">
+
+              <!-- UI Project 01: Money Insights -->
+              <a href="project-money-insights.html" class="zajno-card" data-reveal data-cursor-hover>
+                <div class="zajno-card__visual">
+                  <img src="Cards/Money.png" alt="Money Insights App" class="zajno-card__img" loading="lazy">
+                </div>
+                <div class="zajno-card__data">
+                  <div class="zajno-card__text">
+                    <h3 class="zajno-card__title" data-scramble>Money Insights</h3>
+                    <p class="zajno-card__desc">A personal finance management application with multiple theme variations
+                      and detailed wireframing.</p>
+                    <div class="zajno-card__tags">
+                      <span class="tag">UI/UX</span>
+                      <span class="tag">Figma</span>
+                      <span class="tag">Finance</span>
+                    </div>
+                  </div>
+                  <div class="zajno-card__footer">
+                    <div class="zajno-card__action">
+                      <span>View Case Study</span>
+                      <div class="zajno-card__arrow">
+                        <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338"
+                            stroke="currentColor" stroke-width="1.6" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- UI Project 02: Gym -->
+              <a href="project-game.html" class="zajno-card" data-reveal data-cursor-hover>
+                <div class="zajno-card__visual">
+                  <img src="Cards/Gym.png" alt="Gym Workout Tracking App" class="zajno-card__img" loading="lazy">
+                </div>
+                <div class="zajno-card__data">
+                  <div class="zajno-card__text">
+                    <h3 class="zajno-card__title" data-scramble>Gym</h3>
+                    <p class="zajno-card__desc">Comprehensive fitness tracking &amp; workout management app with
+                      progress monitoring and instructional video guides.</p>
+                    <div class="zajno-card__tags">
+                      <span class="tag">UI/UX</span>
+                      <span class="tag">Mobile</span>
+                      <span class="tag">Fitness</span>
+                    </div>
+                  </div>
+                  <div class="zajno-card__footer">
+                    <div class="zajno-card__action">
+                      <span>View Case Study</span>
+                      <div class="zajno-card__arrow">
+                        <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338"
+                            stroke="currentColor" stroke-width="1.6" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- UI Project 03: UniNotes -->
+              <a href="project-uninotes.html" class="zajno-card" data-reveal data-cursor-hover>
+                <div class="zajno-card__visual">
+                  <span class="zajno-card__badge">Live on Google Play</span>
+                  <img src="Cards/UNI.png" alt="UniNotes App" class="zajno-card__img" loading="lazy">
+                </div>
+                <div class="zajno-card__data">
+                  <div class="zajno-card__text">
+                    <h3 class="zajno-card__title" data-scramble>UniNotes</h3>
+                    <p class="zajno-card__desc">Study materials platform engineered for Computer and Information Science
+                      students at Ain Shams University.</p>
+                    <div class="zajno-card__tags">
+                      <span class="tag">Mobile App</span>
+                      <span class="tag">Google Play</span>
+                      <span class="tag">EdTech</span>
+                    </div>
+                  </div>
+                  <div class="zajno-card__footer">
+                    <div class="zajno-card__action">
+                      <span>View Case Study</span>
+                      <div class="zajno-card__arrow">
+                        <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338"
+                            stroke="currentColor" stroke-width="1.6" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+            </div>
           </div>
+
+          <!-- Dev Mode Gallery Track (Zajno Card Style) -->
+          <div class="mode-dev projects-horizontal-container" id="dev-projects-outer">
+            <div class="projects-track" id="dev-projects-track">
+
+              <!-- Dev Project 01: cudaml -->
+              <a href="https://github.com/ZVAXEROWS/cudaml" target="_blank" class="zajno-card" data-reveal
+                data-cursor-hover>
+                <div class="zajno-card__visual">
+                  <div class="zajno-card__dev-canvas">
+                    <div class="zajno-card__dev-top">
+                      <span class="zajno-card__dev-num">01 / GPU ML</span>
+                      <span class="zajno-card__dev-badge">CUDA C++</span>
+                    </div>
+                    <div class="zajno-card__dev-hero">
+                      <div class="zajno-card__dev-tech">cudaml</div>
+                      <div class="zajno-card__dev-sub">CUDA Accelerated ML Engine</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="zajno-card__data">
+                  <div class="zajno-card__text">
+                    <h3 class="zajno-card__title" data-scramble>cudaml</h3>
+                    <p class="zajno-card__desc">CUDA-accelerated ML in C++. GPU-parallel regression training with custom
+                      kernel implementations. Zero external ML deps.</p>
+                    <div class="zajno-card__tags">
+                      <span class="tag">C++</span>
+                      <span class="tag">CUDA</span>
+                      <span class="tag">GPU Parallel</span>
+                      <span class="tag">Machine Learning</span>
+                    </div>
+                  </div>
+                  <div class="zajno-card__footer">
+                    <div class="zajno-card__action">
+                      <span>View on GitHub</span>
+                      <div class="zajno-card__arrow">
+                        <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338"
+                            stroke="currentColor" stroke-width="1.6" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Dev Project 02: cppml -->
+              <a href="https://github.com/ZVAXEROWS/cppml" target="_blank" class="zajno-card" data-reveal
+                data-cursor-hover>
+                <div class="zajno-card__visual">
+                  <div class="zajno-card__dev-canvas">
+                    <div class="zajno-card__dev-top">
+                      <span class="zajno-card__dev-num">02 / CORE ML</span>
+                      <span class="zajno-card__dev-badge">FROM SCRATCH</span>
+                    </div>
+                    <div class="zajno-card__dev-hero">
+                      <div class="zajno-card__dev-tech">cppml</div>
+                      <div class="zajno-card__dev-sub">Pure C++ Machine Learning</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="zajno-card__data">
+                  <div class="zajno-card__text">
+                    <h3 class="zajno-card__title" data-scramble>cppml</h3>
+                    <p class="zajno-card__desc">C++ ML library built from scratch - linear/polynomial regression,
+                      gradient descent, feature scaling, and matrix math without external libraries.</p>
+                    <div class="zajno-card__tags">
+                      <span class="tag">C++</span>
+                      <span class="tag">Linear Algebra</span>
+                      <span class="tag">Algorithms</span>
+                    </div>
+                  </div>
+                  <div class="zajno-card__footer">
+                    <div class="zajno-card__action">
+                      <span>View on GitHub</span>
+                      <div class="zajno-card__arrow">
+                        <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338"
+                            stroke="currentColor" stroke-width="1.6" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Dev Project 03: Heart Disease Prediction -->
+              <a href="https://github.com/ZVAXEROWS" target="_blank" class="zajno-card" data-reveal data-cursor-hover>
+                <div class="zajno-card__visual">
+                  <div class="zajno-card__dev-canvas">
+                    <div class="zajno-card__dev-top">
+                      <span class="zajno-card__dev-num">03 / AI WEB APP</span>
+                      <span class="zajno-card__dev-badge">STREAMLIT</span>
+                    </div>
+                    <div class="zajno-card__dev-hero">
+                      <div class="zajno-card__dev-tech">Cardio ML</div>
+                      <div class="zajno-card__dev-sub">Heart Disease Prediction</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="zajno-card__data">
+                  <div class="zajno-card__text">
+                    <h3 class="zajno-card__title" data-scramble>Heart Disease Prediction</h3>
+                    <p class="zajno-card__desc">Python/Streamlit ML application. Evaluates classifiers on the UCI heart
+                      disease dataset with real-time interactive inference.</p>
+                    <div class="zajno-card__tags">
+                      <span class="tag">Python</span>
+                      <span class="tag">Streamlit</span>
+                      <span class="tag">Scikit-Learn</span>
+                    </div>
+                  </div>
+                  <div class="zajno-card__footer">
+                    <div class="zajno-card__action">
+                      <span>View on GitHub</span>
+                      <div class="zajno-card__arrow">
+                        <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338"
+                            stroke="currentColor" stroke-width="1.6" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Dev Project 04: FOS Operating System -->
+              <a href="https://github.com/ZVAXEROWS" target="_blank" class="zajno-card" data-reveal data-cursor-hover>
+                <div class="zajno-card__visual">
+                  <div class="zajno-card__dev-canvas">
+                    <div class="zajno-card__dev-top">
+                      <span class="zajno-card__dev-num">04 / KERNEL &amp; OS</span>
+                      <span class="zajno-card__dev-badge">C / QEMU</span>
+                    </div>
+                    <div class="zajno-card__dev-hero">
+                      <div class="zajno-card__dev-tech">FOS Kernel</div>
+                      <div class="zajno-card__dev-sub">FCIS Operating System</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="zajno-card__data">
+                  <div class="zajno-card__text">
+                    <h3 class="zajno-card__title" data-scramble>FOS - FCIS OS</h3>
+                    <p class="zajno-card__desc">C systems project: custom CLI shell, memory segmentation, virtual memory
+                      management, and process scheduling running in QEMU.</p>
+                    <div class="zajno-card__tags">
+                      <span class="tag">C</span>
+                      <span class="tag">Operating Systems</span>
+                      <span class="tag">QEMU</span>
+                    </div>
+                  </div>
+                  <div class="zajno-card__footer">
+                    <div class="zajno-card__action">
+                      <span>View on GitHub</span>
+                      <div class="zajno-card__arrow">
+                        <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338"
+                            stroke="currentColor" stroke-width="1.6" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Dev Project 05: Text Completer -->
+              <a href="https://github.com/ZVAXEROWS" target="_blank" class="zajno-card" data-reveal data-cursor-hover>
+                <div class="zajno-card__visual">
+                  <div class="zajno-card__dev-canvas">
+                    <div class="zajno-card__dev-top">
+                      <span class="zajno-card__dev-num">05 / GUI &amp; ALGO</span>
+                      <span class="zajno-card__dev-badge">C++ / QT</span>
+                    </div>
+                    <div class="zajno-card__dev-hero">
+                      <div class="zajno-card__dev-tech">Trie Completer</div>
+                      <div class="zajno-card__dev-sub">Real-Time Autocomplete</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="zajno-card__data">
+                  <div class="zajno-card__text">
+                    <h3 class="zajno-card__title" data-scramble>Text Completer</h3>
+                    <p class="zajno-card__desc">Real-time autocomplete engine using custom Trie tree structure
+                      integrated with a Qt desktop GUI for sub-millisecond search suggestions.</p>
+                    <div class="zajno-card__tags">
+                      <span class="tag">C++</span>
+                      <span class="tag">Qt 6</span>
+                      <span class="tag">Trie Tree</span>
+                    </div>
+                  </div>
+                  <div class="zajno-card__footer">
+                    <div class="zajno-card__action">
+                      <span>View on GitHub</span>
+                      <div class="zajno-card__arrow">
+                        <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338"
+                            stroke="currentColor" stroke-width="1.6" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Dev Project 06: dot-man -->
+              <a href="https://github.com/ZVAXEROWS/dot-man" target="_blank" class="zajno-card" data-reveal
+                data-cursor-hover>
+                <div class="zajno-card__visual">
+                  <div class="zajno-card__dev-canvas">
+                    <div class="zajno-card__dev-top">
+                      <span class="zajno-card__dev-num">06 / CLI UTILITY</span>
+                      <span class="zajno-card__dev-badge">PYTHON</span>
+                    </div>
+                    <div class="zajno-card__dev-hero">
+                      <div class="zajno-card__dev-tech">dot-man</div>
+                      <div class="zajno-card__dev-sub">Dotfile Manager CLI</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="zajno-card__data">
+                  <div class="zajno-card__text">
+                    <h3 class="zajno-card__title" data-scramble>dot-man</h3>
+                    <p class="zajno-card__desc">Python CLI dotfile manager. Git branch-per-config workflow, automated
+                      secret redaction, and cross-platform symlink synchronization.</p>
+                    <div class="zajno-card__tags">
+                      <span class="tag">Python</span>
+                      <span class="tag">CLI</span>
+                      <span class="tag">Git Automation</span>
+                    </div>
+                  </div>
+                  <div class="zajno-card__footer">
+                    <div class="zajno-card__action">
+                      <span>View on GitHub</span>
+                      <div class="zajno-card__arrow">
+                        <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338"
+                            stroke="currentColor" stroke-width="1.6" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Dev Project 07: Examination System -->
+              <a href="https://github.com/ZVAXEROWS" target="_blank" class="zajno-card" data-reveal data-cursor-hover>
+                <div class="zajno-card__visual">
+                  <div class="zajno-card__dev-canvas">
+                    <div class="zajno-card__dev-top">
+                      <span class="zajno-card__dev-num">07 / ENTERPRISE APP</span>
+                      <span class="zajno-card__dev-badge">JAVA OOP</span>
+                    </div>
+                    <div class="zajno-card__dev-hero">
+                      <div class="zajno-card__dev-tech">Exam Engine</div>
+                      <div class="zajno-card__dev-sub">Secure Testing Platform</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="zajno-card__data">
+                  <div class="zajno-card__text">
+                    <h3 class="zajno-card__title" data-scramble>Examination System</h3>
+                    <p class="zajno-card__desc">Java OOP examination platform with encrypted question storage,
+                      role-based access control (Admin/Student), and automated evaluation.</p>
+                    <div class="zajno-card__tags">
+                      <span class="tag">Java</span>
+                      <span class="tag">OOP Design</span>
+                      <span class="tag">Encryption</span>
+                    </div>
+                  </div>
+                  <div class="zajno-card__footer">
+                    <div class="zajno-card__action">
+                      <span>View on GitHub</span>
+                      <div class="zajno-card__arrow">
+                        <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338"
+                            stroke="currentColor" stroke-width="1.6" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Dev Project 08: ConnectX Website -->
+              <a href="https://github.com/ZVAXEROWS" target="_blank" class="zajno-card" data-reveal data-cursor-hover>
+                <div class="zajno-card__visual">
+                  <div class="zajno-card__dev-canvas">
+                    <div class="zajno-card__dev-top">
+                      <span class="zajno-card__dev-num">08 / WEB PLATFORM</span>
+                      <span class="zajno-card__dev-badge">FRONTEND</span>
+                    </div>
+                    <div class="zajno-card__dev-hero">
+                      <div class="zajno-card__dev-tech">ConnectX Web</div>
+                      <div class="zajno-card__dev-sub">Student Tech Org Portal</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="zajno-card__data">
+                  <div class="zajno-card__text">
+                    <h3 class="zajno-card__title" data-scramble>ConnectX Website</h3>
+                    <p class="zajno-card__desc">Full-scale responsive portal for ConnectX student tech organization.
+                      Figma design system translated into responsive code.</p>
+                    <div class="zajno-card__tags">
+                      <span class="tag">HTML/CSS/JS</span>
+                      <span class="tag">Design System</span>
+                      <span class="tag">Responsive</span>
+                    </div>
+                  </div>
+                  <div class="zajno-card__footer">
+                    <div class="zajno-card__action">
+                      <span>View on GitHub</span>
+                      <div class="zajno-card__arrow">
+                        <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338"
+                            stroke="currentColor" stroke-width="1.6" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+            </div>
+          </div>
+
         </div>
+      </div>
+    </section>
 
-        <!-- UI Mode Gallery Track (Zajno Card Style) -->
-        <div class="mode-ui projects-horizontal-container" id="ui-projects-outer">
-          <div class="projects-track" id="ui-projects-track">
-
-            <!-- UI Project 01: Money Insights -->
-            <a href="project-money-insights.html" class="zajno-card" data-reveal data-cursor-hover>
-              <div class="zajno-card__visual">
-                <img src="Cards/Money.png" alt="Money Insights App" class="zajno-card__img" loading="lazy">
-              </div>
-              <div class="zajno-card__data">
-                <div class="zajno-card__text">
-                  <h3 class="zajno-card__title" data-scramble>Money Insights</h3>
-                  <p class="zajno-card__desc">A personal finance management application with multiple theme variations and detailed wireframing.</p>
-                  <div class="zajno-card__tags">
-                    <span class="tag">UI/UX</span>
-                    <span class="tag">Figma</span>
-                    <span class="tag">Finance</span>
-                  </div>
-                </div>
-                <div class="zajno-card__footer">
-                  <div class="zajno-card__action">
-                    <span>View Case Study</span>
-                    <div class="zajno-card__arrow">
-                      <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338" stroke="currentColor" stroke-width="1.6"/>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-            <!-- UI Project 02: Gym -->
-            <a href="project-game.html" class="zajno-card" data-reveal data-cursor-hover>
-              <div class="zajno-card__visual">
-                <img src="Cards/Gym.png" alt="Gym Workout Tracking App" class="zajno-card__img" loading="lazy">
-              </div>
-              <div class="zajno-card__data">
-                <div class="zajno-card__text">
-                  <h3 class="zajno-card__title" data-scramble>Gym</h3>
-                  <p class="zajno-card__desc">Comprehensive fitness tracking &amp; workout management app with progress monitoring and instructional video guides.</p>
-                  <div class="zajno-card__tags">
-                    <span class="tag">UI/UX</span>
-                    <span class="tag">Mobile</span>
-                    <span class="tag">Fitness</span>
-                  </div>
-                </div>
-                <div class="zajno-card__footer">
-                  <div class="zajno-card__action">
-                    <span>View Case Study</span>
-                    <div class="zajno-card__arrow">
-                      <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338" stroke="currentColor" stroke-width="1.6"/>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-            <!-- UI Project 03: UniNotes -->
-            <a href="project-uninotes.html" class="zajno-card" data-reveal data-cursor-hover>
-              <div class="zajno-card__visual">
-                <span class="zajno-card__badge">Live on Google Play</span>
-                <img src="Cards/UNI.png" alt="UniNotes App" class="zajno-card__img" loading="lazy">
-              </div>
-              <div class="zajno-card__data">
-                <div class="zajno-card__text">
-                  <h3 class="zajno-card__title" data-scramble>UniNotes</h3>
-                  <p class="zajno-card__desc">Study materials platform engineered for Computer and Information Science students at Ain Shams University.</p>
-                  <div class="zajno-card__tags">
-                    <span class="tag">Mobile App</span>
-                    <span class="tag">Google Play</span>
-                    <span class="tag">EdTech</span>
-                  </div>
-                </div>
-                <div class="zajno-card__footer">
-                  <div class="zajno-card__action">
-                    <span>View Case Study</span>
-                    <div class="zajno-card__arrow">
-                      <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338" stroke="currentColor" stroke-width="1.6"/>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-          </div>
-        </div>
-
-        <!-- Dev Mode Gallery Track (Zajno Card Style) -->
-        <div class="mode-dev projects-horizontal-container" id="dev-projects-outer">
-          <div class="projects-track" id="dev-projects-track">
-
-            <!-- Dev Project 01: cudaml -->
-            <a href="https://github.com/ZVAXEROWS/cudaml" target="_blank" class="zajno-card" data-reveal data-cursor-hover>
-              <div class="zajno-card__visual">
-                <div class="zajno-card__dev-canvas">
-                  <div class="zajno-card__dev-top">
-                    <span class="zajno-card__dev-num">01 / GPU ML</span>
-                    <span class="zajno-card__dev-badge">CUDA C++</span>
-                  </div>
-                  <div class="zajno-card__dev-hero">
-                    <div class="zajno-card__dev-tech">cudaml</div>
-                    <div class="zajno-card__dev-sub">CUDA Accelerated ML Engine</div>
-                  </div>
-                </div>
-              </div>
-              <div class="zajno-card__data">
-                <div class="zajno-card__text">
-                  <h3 class="zajno-card__title" data-scramble>cudaml</h3>
-                  <p class="zajno-card__desc">CUDA-accelerated ML in C++. GPU-parallel regression training with custom kernel implementations. Zero external ML deps.</p>
-                  <div class="zajno-card__tags">
-                    <span class="tag">C++</span>
-                    <span class="tag">CUDA</span>
-                    <span class="tag">GPU Parallel</span>
-                    <span class="tag">Machine Learning</span>
-                  </div>
-                </div>
-                <div class="zajno-card__footer">
-                  <div class="zajno-card__action">
-                    <span>View on GitHub</span>
-                    <div class="zajno-card__arrow">
-                      <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338" stroke="currentColor" stroke-width="1.6"/>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-            <!-- Dev Project 02: cppml -->
-            <a href="https://github.com/ZVAXEROWS/cppml" target="_blank" class="zajno-card" data-reveal data-cursor-hover>
-              <div class="zajno-card__visual">
-                <div class="zajno-card__dev-canvas">
-                  <div class="zajno-card__dev-top">
-                    <span class="zajno-card__dev-num">02 / CORE ML</span>
-                    <span class="zajno-card__dev-badge">FROM SCRATCH</span>
-                  </div>
-                  <div class="zajno-card__dev-hero">
-                    <div class="zajno-card__dev-tech">cppml</div>
-                    <div class="zajno-card__dev-sub">Pure C++ Machine Learning</div>
-                  </div>
-                </div>
-              </div>
-              <div class="zajno-card__data">
-                <div class="zajno-card__text">
-                  <h3 class="zajno-card__title" data-scramble>cppml</h3>
-                  <p class="zajno-card__desc">C++ ML library built from scratch — linear/polynomial regression, gradient descent, feature scaling, and matrix math without external libraries.</p>
-                  <div class="zajno-card__tags">
-                    <span class="tag">C++</span>
-                    <span class="tag">Linear Algebra</span>
-                    <span class="tag">Algorithms</span>
-                  </div>
-                </div>
-                <div class="zajno-card__footer">
-                  <div class="zajno-card__action">
-                    <span>View on GitHub</span>
-                    <div class="zajno-card__arrow">
-                      <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338" stroke="currentColor" stroke-width="1.6"/>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-            <!-- Dev Project 03: Heart Disease Prediction -->
-            <a href="https://github.com/ZVAXEROWS" target="_blank" class="zajno-card" data-reveal data-cursor-hover>
-              <div class="zajno-card__visual">
-                <div class="zajno-card__dev-canvas">
-                  <div class="zajno-card__dev-top">
-                    <span class="zajno-card__dev-num">03 / AI WEB APP</span>
-                    <span class="zajno-card__dev-badge">STREAMLIT</span>
-                  </div>
-                  <div class="zajno-card__dev-hero">
-                    <div class="zajno-card__dev-tech">Cardio ML</div>
-                    <div class="zajno-card__dev-sub">Heart Disease Prediction</div>
-                  </div>
-                </div>
-              </div>
-              <div class="zajno-card__data">
-                <div class="zajno-card__text">
-                  <h3 class="zajno-card__title" data-scramble>Heart Disease Prediction</h3>
-                  <p class="zajno-card__desc">Python/Streamlit ML application. Evaluates classifiers on the UCI heart disease dataset with real-time interactive inference.</p>
-                  <div class="zajno-card__tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Streamlit</span>
-                    <span class="tag">Scikit-Learn</span>
-                  </div>
-                </div>
-                <div class="zajno-card__footer">
-                  <div class="zajno-card__action">
-                    <span>View on GitHub</span>
-                    <div class="zajno-card__arrow">
-                      <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338" stroke="currentColor" stroke-width="1.6"/>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-            <!-- Dev Project 04: FOS Operating System -->
-            <a href="https://github.com/ZVAXEROWS" target="_blank" class="zajno-card" data-reveal data-cursor-hover>
-              <div class="zajno-card__visual">
-                <div class="zajno-card__dev-canvas">
-                  <div class="zajno-card__dev-top">
-                    <span class="zajno-card__dev-num">04 / KERNEL &amp; OS</span>
-                    <span class="zajno-card__dev-badge">C / QEMU</span>
-                  </div>
-                  <div class="zajno-card__dev-hero">
-                    <div class="zajno-card__dev-tech">FOS Kernel</div>
-                    <div class="zajno-card__dev-sub">FCIS Operating System</div>
-                  </div>
-                </div>
-              </div>
-              <div class="zajno-card__data">
-                <div class="zajno-card__text">
-                  <h3 class="zajno-card__title" data-scramble>FOS — FCIS OS</h3>
-                  <p class="zajno-card__desc">C systems project: custom CLI shell, memory segmentation, virtual memory management, and process scheduling running in QEMU.</p>
-                  <div class="zajno-card__tags">
-                    <span class="tag">C</span>
-                    <span class="tag">Operating Systems</span>
-                    <span class="tag">QEMU</span>
-                  </div>
-                </div>
-                <div class="zajno-card__footer">
-                  <div class="zajno-card__action">
-                    <span>View on GitHub</span>
-                    <div class="zajno-card__arrow">
-                      <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338" stroke="currentColor" stroke-width="1.6"/>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-            <!-- Dev Project 05: Text Completer -->
-            <a href="https://github.com/ZVAXEROWS" target="_blank" class="zajno-card" data-reveal data-cursor-hover>
-              <div class="zajno-card__visual">
-                <div class="zajno-card__dev-canvas">
-                  <div class="zajno-card__dev-top">
-                    <span class="zajno-card__dev-num">05 / GUI &amp; ALGO</span>
-                    <span class="zajno-card__dev-badge">C++ / QT</span>
-                  </div>
-                  <div class="zajno-card__dev-hero">
-                    <div class="zajno-card__dev-tech">Trie Completer</div>
-                    <div class="zajno-card__dev-sub">Real-Time Autocomplete</div>
-                  </div>
-                </div>
-              </div>
-              <div class="zajno-card__data">
-                <div class="zajno-card__text">
-                  <h3 class="zajno-card__title" data-scramble>Text Completer</h3>
-                  <p class="zajno-card__desc">Real-time autocomplete engine using custom Trie tree structure integrated with a Qt desktop GUI for sub-millisecond search suggestions.</p>
-                  <div class="zajno-card__tags">
-                    <span class="tag">C++</span>
-                    <span class="tag">Qt 6</span>
-                    <span class="tag">Trie Tree</span>
-                  </div>
-                </div>
-                <div class="zajno-card__footer">
-                  <div class="zajno-card__action">
-                    <span>View on GitHub</span>
-                    <div class="zajno-card__arrow">
-                      <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338" stroke="currentColor" stroke-width="1.6"/>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-            <!-- Dev Project 06: dot-man -->
-            <a href="https://github.com/ZVAXEROWS/dot-man" target="_blank" class="zajno-card" data-reveal data-cursor-hover>
-              <div class="zajno-card__visual">
-                <div class="zajno-card__dev-canvas">
-                  <div class="zajno-card__dev-top">
-                    <span class="zajno-card__dev-num">06 / CLI UTILITY</span>
-                    <span class="zajno-card__dev-badge">PYTHON</span>
-                  </div>
-                  <div class="zajno-card__dev-hero">
-                    <div class="zajno-card__dev-tech">dot-man</div>
-                    <div class="zajno-card__dev-sub">Dotfile Manager CLI</div>
-                  </div>
-                </div>
-              </div>
-              <div class="zajno-card__data">
-                <div class="zajno-card__text">
-                  <h3 class="zajno-card__title" data-scramble>dot-man</h3>
-                  <p class="zajno-card__desc">Python CLI dotfile manager. Git branch-per-config workflow, automated secret redaction, and cross-platform symlink synchronization.</p>
-                  <div class="zajno-card__tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">CLI</span>
-                    <span class="tag">Git Automation</span>
-                  </div>
-                </div>
-                <div class="zajno-card__footer">
-                  <div class="zajno-card__action">
-                    <span>View on GitHub</span>
-                    <div class="zajno-card__arrow">
-                      <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338" stroke="currentColor" stroke-width="1.6"/>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-            <!-- Dev Project 07: Examination System -->
-            <a href="https://github.com/ZVAXEROWS" target="_blank" class="zajno-card" data-reveal data-cursor-hover>
-              <div class="zajno-card__visual">
-                <div class="zajno-card__dev-canvas">
-                  <div class="zajno-card__dev-top">
-                    <span class="zajno-card__dev-num">07 / ENTERPRISE APP</span>
-                    <span class="zajno-card__dev-badge">JAVA OOP</span>
-                  </div>
-                  <div class="zajno-card__dev-hero">
-                    <div class="zajno-card__dev-tech">Exam Engine</div>
-                    <div class="zajno-card__dev-sub">Secure Testing Platform</div>
-                  </div>
-                </div>
-              </div>
-              <div class="zajno-card__data">
-                <div class="zajno-card__text">
-                  <h3 class="zajno-card__title" data-scramble>Examination System</h3>
-                  <p class="zajno-card__desc">Java OOP examination platform with encrypted question storage, role-based access control (Admin/Student), and automated evaluation.</p>
-                  <div class="zajno-card__tags">
-                    <span class="tag">Java</span>
-                    <span class="tag">OOP Design</span>
-                    <span class="tag">Encryption</span>
-                  </div>
-                </div>
-                <div class="zajno-card__footer">
-                  <div class="zajno-card__action">
-                    <span>View on GitHub</span>
-                    <div class="zajno-card__arrow">
-                      <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338" stroke="currentColor" stroke-width="1.6"/>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-            <!-- Dev Project 08: ConnectX Website -->
-            <a href="https://github.com/ZVAXEROWS" target="_blank" class="zajno-card" data-reveal data-cursor-hover>
-              <div class="zajno-card__visual">
-                <div class="zajno-card__dev-canvas">
-                  <div class="zajno-card__dev-top">
-                    <span class="zajno-card__dev-num">08 / WEB PLATFORM</span>
-                    <span class="zajno-card__dev-badge">FRONTEND</span>
-                  </div>
-                  <div class="zajno-card__dev-hero">
-                    <div class="zajno-card__dev-tech">ConnectX Web</div>
-                    <div class="zajno-card__dev-sub">Student Tech Org Portal</div>
-                  </div>
-                </div>
-              </div>
-              <div class="zajno-card__data">
-                <div class="zajno-card__text">
-                  <h3 class="zajno-card__title" data-scramble>ConnectX Website</h3>
-                  <p class="zajno-card__desc">Full-scale responsive portal for ConnectX student tech organization. Figma design system translated into responsive code.</p>
-                  <div class="zajno-card__tags">
-                    <span class="tag">HTML/CSS/JS</span>
-                    <span class="tag">Design System</span>
-                    <span class="tag">Responsive</span>
-                  </div>
-                </div>
-                <div class="zajno-card__footer">
-                  <div class="zajno-card__action">
-                    <span>View on GitHub</span>
-                    <div class="zajno-card__arrow">
-                      <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338" stroke="currentColor" stroke-width="1.6"/>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-          </div>
-        </div>
-
+    <!-- ── Slanted Inter-Section Connector (Projects to CV) ── -->
+    <div class="section-connector section-connector--cv" aria-hidden="true">
+      <div class="section-connector__stamp">
+        <span class="connector-index">[04 / 05]</span>
+        <span class="connector-title">// VERIFIED_CURRICULUM_VITAE &amp; CREDENTIALS</span>
+        <span class="connector-coord">[UPDATED 2025]</span>
       </div>
     </div>
-  </section>
 
-  <!-- ══════════════════════════════════════
+    <!-- ══════════════════════════════════════
        CV — dark
   ══════════════════════════════════════ -->
-  <section id="cv" data-theme="dark" aria-labelledby="cv-heading">
-    <div class="section-inner">
+    <section id="cv" data-theme="dark" aria-labelledby="cv-heading">
+      <div class="section-inner">
 
-      <p class="section__label" data-reveal>Resume</p>
-      <h2 class="section__heading" data-scramble data-reveal id="cv-heading">curriculum.vitae( )</h2>
+        <p class="section__label" data-reveal>Resume</p>
+        <h2 class="section__heading" data-scramble data-reveal id="cv-heading">curriculum.vitae( )</h2>
 
-      <!-- UI CV -->
-      <div class="mode-ui" data-reveal>
-        <div class="cv-embed-wrap">
-          <iframe
-            id="cv-iframe-ui"
-            data-src="assets/cv/cv-ui.pdf"
-            title="Ahmed Mohamed — Design CV"
-            aria-label="Embedded Design CV PDF"
-            tabindex="-1"
-            loading="lazy">
-          </iframe>
-          <div class="cv-embed-meta">
-            <span>Design CV — updated 2025</span>
-            <a href="assets/cv/cv-ui.pdf" target="_blank" class="cv-open-link" data-cv-ui>Open in new tab ↗</a>
+        <!-- UI CV -->
+        <div class="mode-ui" data-reveal>
+          <div class="cv-embed-wrap">
+            <iframe id="cv-iframe-ui" data-src="assets/cv/cv-ui.pdf" title="Ahmed Mohamed - Design CV"
+              aria-label="Embedded Design CV PDF" tabindex="-1" loading="lazy">
+            </iframe>
+            <div class="cv-embed-meta">
+              <span>Design CV - updated 2025</span>
+              <a href="assets/cv/cv-ui.pdf" target="_blank" class="cv-open-link" data-cv-ui>Open in new tab ↗</a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Dev CV -->
-      <div class="mode-dev" data-reveal>
-        <div class="cv-embed-wrap">
-          <iframe
-            id="cv-iframe-dev"
-            data-src="assets/cv/cv-dev.pdf"
-            title="Ahmed Mohamed — Developer CV"
-            aria-label="Embedded Developer CV PDF"
-            tabindex="-1"
-            loading="lazy">
-          </iframe>
-          <div class="cv-embed-meta">
-            <span>Developer CV — updated 2025</span>
-            <a href="assets/cv/cv-dev.pdf" target="_blank" class="cv-open-link" data-cv-dev>Open in new tab ↗</a>
+        <!-- Dev CV -->
+        <div class="mode-dev" data-reveal>
+          <div class="cv-embed-wrap">
+            <iframe id="cv-iframe-dev" data-src="assets/cv/cv-dev.pdf" title="Ahmed Mohamed - Developer CV"
+              aria-label="Embedded Developer CV PDF" tabindex="-1" loading="lazy">
+            </iframe>
+            <div class="cv-embed-meta">
+              <span>Developer CV - updated 2025</span>
+              <a href="assets/cv/cv-dev.pdf" target="_blank" class="cv-open-link" data-cv-dev>Open in new tab ↗</a>
+            </div>
           </div>
         </div>
+
       </div>
+    </section>
 
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
+    <!-- ══════════════════════════════════════
        CONTACT — light
   ══════════════════════════════════════ -->
-  <section id="contact" data-theme="light" aria-labelledby="contact-heading">
-    <div class="section-inner">
+    <section id="contact" data-theme="light" aria-labelledby="contact-heading">
+      <div class="section-inner">
 
-      <p class="section__label" data-reveal>Get in touch</p>
-      <h2 class="section__heading" data-scramble data-reveal id="contact-heading">contact/</h2>
+        <p class="section__label" data-reveal>Get in touch</p>
+        <h2 class="section__heading" data-scramble data-reveal id="contact-heading">contact/</h2>
 
-      <div data-reveal>
-        <a href="mailto:ahmedmkh1026@gmail.com" class="contact__email" data-cursor-hover>
-          ahmedmkh1026@gmail.com
-        </a>
+        <div data-reveal>
+          <a href="mailto:ahmedmkh1026@gmail.com" class="contact__email" data-cursor-hover>
+            ahmedmkh1026@gmail.com
+          </a>
+        </div>
+
+        <div class="contact__links" data-reveal>
+          <a href="https://www.linkedin.com/in/ahmed-mohamed-2034a5316/" target="_blank"
+            class="contact__social">LinkedIn</a>
+          <a href="https://github.com/ZVAXEROWS" target="_blank" class="contact__social">GitHub</a>
+          <a href="https://www.instagram.com/amk._.17/" target="_blank" class="contact__social">Instagram</a>
+          <a href="https://www.behance.net/" target="_blank" class="contact__social">Behance</a>
+          <a href="https://dribbble.com/" target="_blank" class="contact__social">Dribbble</a>
+          <a href="https://linktr.ee/ZVAXEROWS" target="_blank" class="contact__social">Linktree</a>
+          <a href="tel:+201002144891" class="contact__social">+20 100 214 4891</a>
+        </div>
+
       </div>
-
-      <div class="contact__links" data-reveal>
-        <a href="https://www.linkedin.com/in/ahmed-mohamed-2034a5316/" target="_blank" class="contact__social">LinkedIn</a>
-        <a href="https://github.com/ZVAXEROWS"                         target="_blank" class="contact__social">GitHub</a>
-        <a href="https://www.instagram.com/amk._.17/"                  target="_blank" class="contact__social">Instagram</a>
-        <a href="https://www.behance.net/"                              target="_blank" class="contact__social">Behance</a>
-        <a href="https://dribbble.com/"                                 target="_blank" class="contact__social">Dribbble</a>
-        <a href="https://linktr.ee/ZVAXEROWS"                          target="_blank" class="contact__social">Linktree</a>
-        <a href="tel:+201002144891"                                                     class="contact__social">+20 100 214 4891</a>
-      </div>
-
-    </div>
-  </section>
+    </section>
 
   </main>
 
@@ -838,12 +950,13 @@
   </footer>
 
   <!-- ── JS Modules ── -->
-  <script src="js/preloader.js"    defer></script>
-  <script src="js/cursor.js"       defer></script>
-  <script src="js/split-text.js"   defer></script>
+  <script src="js/preloader.js" defer></script>
+  <script src="js/cursor.js" defer></script>
+  <script src="js/split-text.js" defer></script>
   <script src="js/scroll-reveal.js" defer></script>
-  <script src="js/mode-toggle.js"  defer></script>
-  <script src="js/main.js"         defer></script>
+  <script src="js/mode-toggle.js" defer></script>
+  <script src="js/main.js" defer></script>
 
 </body>
+
 </html>
