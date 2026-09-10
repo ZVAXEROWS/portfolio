@@ -1162,6 +1162,7 @@ section[data-theme] {
   gap: clamp(1.25rem, 2vw, 2rem);
   width: max-content;
   padding-bottom: 1.25rem;
+  padding-left: clamp(1.5rem, 5vw, 4rem);
   padding-right: clamp(1.5rem, 5vw, 4rem);
   will-change: transform;
 }
