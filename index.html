@@ -75,7 +75,10 @@
        HERO — dark
   ══════════════════════════════════════ -->
     <section class="hero" id="hero" data-theme="dark" aria-label="Hero">
-      <div class="hero__grid-bg" aria-hidden="true"></div>
+      <div class="hero__bg-wrap" aria-hidden="true">
+        <img src="Bg.gif" alt="" class="hero__bg-gif" loading="eager">
+        <div class="hero__grid-bg"></div>
+      </div>
 
       <!-- UI Mode Hero -->
       <div class="mode-ui hero__content" data-reveal>
@@ -116,7 +119,9 @@
           <a href="#projects" class="btn btn--primary">View Projects ↗</a>
           <a href="#cv" class="btn btn--outline">View CV ↗</a>
         </div>
-        <div class="hero__scroll-hint" aria-hidden="true">Scroll to explore</div>
+        <div class="hero__scroll-hint" aria-hidden="true" style="color: white; font-weight: bold;">
+          Scroll to explore
+        </div>
       </div>
 
     </section>
@@ -529,335 +534,335 @@
         <div class="mode-dev projects-horizontal-container" id="dev-projects-outer">
           <div class="projects-track" id="dev-projects-track">
 
-              <!-- Dev Project 01: cudaml -->
-              <a href="https://github.com/ZVAXEROWS/cudaml" target="_blank" class="zajno-card" data-reveal
-                data-cursor-hover>
-                <div class="zajno-card__visual">
-                  <div class="zajno-card__dev-canvas">
-                    <div class="zajno-card__dev-top">
-                      <span class="zajno-card__dev-num">01 / GPU ML</span>
-                      <span class="zajno-card__dev-badge">CUDA C++</span>
-                    </div>
-                    <div class="zajno-card__dev-hero">
-                      <div class="zajno-card__dev-tech">cudaml</div>
-                      <div class="zajno-card__dev-sub">CUDA Accelerated ML Engine</div>
+            <!-- Dev Project 01: cudaml -->
+            <a href="https://github.com/ZVAXEROWS/cudaml" target="_blank" class="zajno-card" data-reveal
+              data-cursor-hover>
+              <div class="zajno-card__visual">
+                <div class="zajno-card__dev-canvas">
+                  <div class="zajno-card__dev-top">
+                    <span class="zajno-card__dev-num">01 / GPU ML</span>
+                    <span class="zajno-card__dev-badge">CUDA C++</span>
+                  </div>
+                  <div class="zajno-card__dev-hero">
+                    <div class="zajno-card__dev-tech">cudaml</div>
+                    <div class="zajno-card__dev-sub">CUDA Accelerated ML Engine</div>
+                  </div>
+                </div>
+              </div>
+              <div class="zajno-card__data">
+                <div class="zajno-card__text">
+                  <h3 class="zajno-card__title" data-scramble>cudaml</h3>
+                  <p class="zajno-card__desc">CUDA-accelerated ML in C++. GPU-parallel regression training with custom
+                    kernel implementations. Zero external ML deps.</p>
+                  <div class="zajno-card__tags">
+                    <span class="tag">C++</span>
+                    <span class="tag">CUDA</span>
+                    <span class="tag">GPU Parallel</span>
+                    <span class="tag">Machine Learning</span>
+                  </div>
+                </div>
+                <div class="zajno-card__footer">
+                  <div class="zajno-card__action">
+                    <span>View on GitHub</span>
+                    <div class="zajno-card__arrow">
+                      <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338"
+                          stroke="currentColor" stroke-width="1.6" />
+                      </svg>
                     </div>
                   </div>
                 </div>
-                <div class="zajno-card__data">
-                  <div class="zajno-card__text">
-                    <h3 class="zajno-card__title" data-scramble>cudaml</h3>
-                    <p class="zajno-card__desc">CUDA-accelerated ML in C++. GPU-parallel regression training with custom
-                      kernel implementations. Zero external ML deps.</p>
-                    <div class="zajno-card__tags">
-                      <span class="tag">C++</span>
-                      <span class="tag">CUDA</span>
-                      <span class="tag">GPU Parallel</span>
-                      <span class="tag">Machine Learning</span>
-                    </div>
-                  </div>
-                  <div class="zajno-card__footer">
-                    <div class="zajno-card__action">
-                      <span>View on GitHub</span>
-                      <div class="zajno-card__arrow">
-                        <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338"
-                            stroke="currentColor" stroke-width="1.6" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
+              </div>
+            </a>
 
-              <!-- Dev Project 02: cppml -->
-              <a href="https://github.com/ZVAXEROWS/cppml" target="_blank" class="zajno-card" data-reveal
-                data-cursor-hover>
-                <div class="zajno-card__visual">
-                  <div class="zajno-card__dev-canvas">
-                    <div class="zajno-card__dev-top">
-                      <span class="zajno-card__dev-num">02 / CORE ML</span>
-                      <span class="zajno-card__dev-badge">FROM SCRATCH</span>
-                    </div>
-                    <div class="zajno-card__dev-hero">
-                      <div class="zajno-card__dev-tech">cppml</div>
-                      <div class="zajno-card__dev-sub">Pure C++ Machine Learning</div>
+            <!-- Dev Project 02: cppml -->
+            <a href="https://github.com/ZVAXEROWS/cppml" target="_blank" class="zajno-card" data-reveal
+              data-cursor-hover>
+              <div class="zajno-card__visual">
+                <div class="zajno-card__dev-canvas">
+                  <div class="zajno-card__dev-top">
+                    <span class="zajno-card__dev-num">02 / CORE ML</span>
+                    <span class="zajno-card__dev-badge">FROM SCRATCH</span>
+                  </div>
+                  <div class="zajno-card__dev-hero">
+                    <div class="zajno-card__dev-tech">cppml</div>
+                    <div class="zajno-card__dev-sub">Pure C++ Machine Learning</div>
+                  </div>
+                </div>
+              </div>
+              <div class="zajno-card__data">
+                <div class="zajno-card__text">
+                  <h3 class="zajno-card__title" data-scramble>cppml</h3>
+                  <p class="zajno-card__desc">C++ ML library built from scratch - linear/polynomial regression,
+                    gradient descent, feature scaling, and matrix math without external libraries.</p>
+                  <div class="zajno-card__tags">
+                    <span class="tag">C++</span>
+                    <span class="tag">Linear Algebra</span>
+                    <span class="tag">Algorithms</span>
+                  </div>
+                </div>
+                <div class="zajno-card__footer">
+                  <div class="zajno-card__action">
+                    <span>View on GitHub</span>
+                    <div class="zajno-card__arrow">
+                      <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338"
+                          stroke="currentColor" stroke-width="1.6" />
+                      </svg>
                     </div>
                   </div>
                 </div>
-                <div class="zajno-card__data">
-                  <div class="zajno-card__text">
-                    <h3 class="zajno-card__title" data-scramble>cppml</h3>
-                    <p class="zajno-card__desc">C++ ML library built from scratch - linear/polynomial regression,
-                      gradient descent, feature scaling, and matrix math without external libraries.</p>
-                    <div class="zajno-card__tags">
-                      <span class="tag">C++</span>
-                      <span class="tag">Linear Algebra</span>
-                      <span class="tag">Algorithms</span>
-                    </div>
-                  </div>
-                  <div class="zajno-card__footer">
-                    <div class="zajno-card__action">
-                      <span>View on GitHub</span>
-                      <div class="zajno-card__arrow">
-                        <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338"
-                            stroke="currentColor" stroke-width="1.6" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
+              </div>
+            </a>
 
-              <!-- Dev Project 03: Heart Disease Prediction -->
-              <a href="https://github.com/ZVAXEROWS" target="_blank" class="zajno-card" data-reveal data-cursor-hover>
-                <div class="zajno-card__visual">
-                  <div class="zajno-card__dev-canvas">
-                    <div class="zajno-card__dev-top">
-                      <span class="zajno-card__dev-num">03 / AI WEB APP</span>
-                      <span class="zajno-card__dev-badge">STREAMLIT</span>
-                    </div>
-                    <div class="zajno-card__dev-hero">
-                      <div class="zajno-card__dev-tech">Cardio ML</div>
-                      <div class="zajno-card__dev-sub">Heart Disease Prediction</div>
+            <!-- Dev Project 03: Heart Disease Prediction -->
+            <a href="https://github.com/ZVAXEROWS" target="_blank" class="zajno-card" data-reveal data-cursor-hover>
+              <div class="zajno-card__visual">
+                <div class="zajno-card__dev-canvas">
+                  <div class="zajno-card__dev-top">
+                    <span class="zajno-card__dev-num">03 / AI WEB APP</span>
+                    <span class="zajno-card__dev-badge">STREAMLIT</span>
+                  </div>
+                  <div class="zajno-card__dev-hero">
+                    <div class="zajno-card__dev-tech">Cardio ML</div>
+                    <div class="zajno-card__dev-sub">Heart Disease Prediction</div>
+                  </div>
+                </div>
+              </div>
+              <div class="zajno-card__data">
+                <div class="zajno-card__text">
+                  <h3 class="zajno-card__title" data-scramble>Heart Disease Prediction</h3>
+                  <p class="zajno-card__desc">Python/Streamlit ML application. Evaluates classifiers on the UCI heart
+                    disease dataset with real-time interactive inference.</p>
+                  <div class="zajno-card__tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Streamlit</span>
+                    <span class="tag">Scikit-Learn</span>
+                  </div>
+                </div>
+                <div class="zajno-card__footer">
+                  <div class="zajno-card__action">
+                    <span>View on GitHub</span>
+                    <div class="zajno-card__arrow">
+                      <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338"
+                          stroke="currentColor" stroke-width="1.6" />
+                      </svg>
                     </div>
                   </div>
                 </div>
-                <div class="zajno-card__data">
-                  <div class="zajno-card__text">
-                    <h3 class="zajno-card__title" data-scramble>Heart Disease Prediction</h3>
-                    <p class="zajno-card__desc">Python/Streamlit ML application. Evaluates classifiers on the UCI heart
-                      disease dataset with real-time interactive inference.</p>
-                    <div class="zajno-card__tags">
-                      <span class="tag">Python</span>
-                      <span class="tag">Streamlit</span>
-                      <span class="tag">Scikit-Learn</span>
-                    </div>
-                  </div>
-                  <div class="zajno-card__footer">
-                    <div class="zajno-card__action">
-                      <span>View on GitHub</span>
-                      <div class="zajno-card__arrow">
-                        <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338"
-                            stroke="currentColor" stroke-width="1.6" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
+              </div>
+            </a>
 
-              <!-- Dev Project 04: FOS Operating System -->
-              <a href="https://github.com/ZVAXEROWS" target="_blank" class="zajno-card" data-reveal data-cursor-hover>
-                <div class="zajno-card__visual">
-                  <div class="zajno-card__dev-canvas">
-                    <div class="zajno-card__dev-top">
-                      <span class="zajno-card__dev-num">04 / KERNEL &amp; OS</span>
-                      <span class="zajno-card__dev-badge">C / QEMU</span>
-                    </div>
-                    <div class="zajno-card__dev-hero">
-                      <div class="zajno-card__dev-tech">FOS Kernel</div>
-                      <div class="zajno-card__dev-sub">FCIS Operating System</div>
+            <!-- Dev Project 04: FOS Operating System -->
+            <a href="https://github.com/ZVAXEROWS" target="_blank" class="zajno-card" data-reveal data-cursor-hover>
+              <div class="zajno-card__visual">
+                <div class="zajno-card__dev-canvas">
+                  <div class="zajno-card__dev-top">
+                    <span class="zajno-card__dev-num">04 / KERNEL &amp; OS</span>
+                    <span class="zajno-card__dev-badge">C / QEMU</span>
+                  </div>
+                  <div class="zajno-card__dev-hero">
+                    <div class="zajno-card__dev-tech">FOS Kernel</div>
+                    <div class="zajno-card__dev-sub">FCIS Operating System</div>
+                  </div>
+                </div>
+              </div>
+              <div class="zajno-card__data">
+                <div class="zajno-card__text">
+                  <h3 class="zajno-card__title" data-scramble>FOS - FCIS OS</h3>
+                  <p class="zajno-card__desc">C systems project: custom CLI shell, memory segmentation, virtual memory
+                    management, and process scheduling running in QEMU.</p>
+                  <div class="zajno-card__tags">
+                    <span class="tag">C</span>
+                    <span class="tag">Operating Systems</span>
+                    <span class="tag">QEMU</span>
+                  </div>
+                </div>
+                <div class="zajno-card__footer">
+                  <div class="zajno-card__action">
+                    <span>View on GitHub</span>
+                    <div class="zajno-card__arrow">
+                      <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338"
+                          stroke="currentColor" stroke-width="1.6" />
+                      </svg>
                     </div>
                   </div>
                 </div>
-                <div class="zajno-card__data">
-                  <div class="zajno-card__text">
-                    <h3 class="zajno-card__title" data-scramble>FOS - FCIS OS</h3>
-                    <p class="zajno-card__desc">C systems project: custom CLI shell, memory segmentation, virtual memory
-                      management, and process scheduling running in QEMU.</p>
-                    <div class="zajno-card__tags">
-                      <span class="tag">C</span>
-                      <span class="tag">Operating Systems</span>
-                      <span class="tag">QEMU</span>
-                    </div>
-                  </div>
-                  <div class="zajno-card__footer">
-                    <div class="zajno-card__action">
-                      <span>View on GitHub</span>
-                      <div class="zajno-card__arrow">
-                        <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338"
-                            stroke="currentColor" stroke-width="1.6" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
+              </div>
+            </a>
 
-              <!-- Dev Project 05: Text Completer -->
-              <a href="https://github.com/ZVAXEROWS" target="_blank" class="zajno-card" data-reveal data-cursor-hover>
-                <div class="zajno-card__visual">
-                  <div class="zajno-card__dev-canvas">
-                    <div class="zajno-card__dev-top">
-                      <span class="zajno-card__dev-num">05 / GUI &amp; ALGO</span>
-                      <span class="zajno-card__dev-badge">C++ / QT</span>
-                    </div>
-                    <div class="zajno-card__dev-hero">
-                      <div class="zajno-card__dev-tech">Trie Completer</div>
-                      <div class="zajno-card__dev-sub">Real-Time Autocomplete</div>
+            <!-- Dev Project 05: Text Completer -->
+            <a href="https://github.com/ZVAXEROWS" target="_blank" class="zajno-card" data-reveal data-cursor-hover>
+              <div class="zajno-card__visual">
+                <div class="zajno-card__dev-canvas">
+                  <div class="zajno-card__dev-top">
+                    <span class="zajno-card__dev-num">05 / GUI &amp; ALGO</span>
+                    <span class="zajno-card__dev-badge">C++ / QT</span>
+                  </div>
+                  <div class="zajno-card__dev-hero">
+                    <div class="zajno-card__dev-tech">Trie Completer</div>
+                    <div class="zajno-card__dev-sub">Real-Time Autocomplete</div>
+                  </div>
+                </div>
+              </div>
+              <div class="zajno-card__data">
+                <div class="zajno-card__text">
+                  <h3 class="zajno-card__title" data-scramble>Text Completer</h3>
+                  <p class="zajno-card__desc">Real-time autocomplete engine using custom Trie tree structure
+                    integrated with a Qt desktop GUI for sub-millisecond search suggestions.</p>
+                  <div class="zajno-card__tags">
+                    <span class="tag">C++</span>
+                    <span class="tag">Qt 6</span>
+                    <span class="tag">Trie Tree</span>
+                  </div>
+                </div>
+                <div class="zajno-card__footer">
+                  <div class="zajno-card__action">
+                    <span>View on GitHub</span>
+                    <div class="zajno-card__arrow">
+                      <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338"
+                          stroke="currentColor" stroke-width="1.6" />
+                      </svg>
                     </div>
                   </div>
                 </div>
-                <div class="zajno-card__data">
-                  <div class="zajno-card__text">
-                    <h3 class="zajno-card__title" data-scramble>Text Completer</h3>
-                    <p class="zajno-card__desc">Real-time autocomplete engine using custom Trie tree structure
-                      integrated with a Qt desktop GUI for sub-millisecond search suggestions.</p>
-                    <div class="zajno-card__tags">
-                      <span class="tag">C++</span>
-                      <span class="tag">Qt 6</span>
-                      <span class="tag">Trie Tree</span>
-                    </div>
-                  </div>
-                  <div class="zajno-card__footer">
-                    <div class="zajno-card__action">
-                      <span>View on GitHub</span>
-                      <div class="zajno-card__arrow">
-                        <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338"
-                            stroke="currentColor" stroke-width="1.6" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
+              </div>
+            </a>
 
-              <!-- Dev Project 06: dot-man -->
-              <a href="https://github.com/ZVAXEROWS/dot-man" target="_blank" class="zajno-card" data-reveal
-                data-cursor-hover>
-                <div class="zajno-card__visual">
-                  <div class="zajno-card__dev-canvas">
-                    <div class="zajno-card__dev-top">
-                      <span class="zajno-card__dev-num">06 / CLI UTILITY</span>
-                      <span class="zajno-card__dev-badge">PYTHON</span>
-                    </div>
-                    <div class="zajno-card__dev-hero">
-                      <div class="zajno-card__dev-tech">dot-man</div>
-                      <div class="zajno-card__dev-sub">Dotfile Manager CLI</div>
+            <!-- Dev Project 06: dot-man -->
+            <a href="https://github.com/ZVAXEROWS/dot-man" target="_blank" class="zajno-card" data-reveal
+              data-cursor-hover>
+              <div class="zajno-card__visual">
+                <div class="zajno-card__dev-canvas">
+                  <div class="zajno-card__dev-top">
+                    <span class="zajno-card__dev-num">06 / CLI UTILITY</span>
+                    <span class="zajno-card__dev-badge">PYTHON</span>
+                  </div>
+                  <div class="zajno-card__dev-hero">
+                    <div class="zajno-card__dev-tech">dot-man</div>
+                    <div class="zajno-card__dev-sub">Dotfile Manager CLI</div>
+                  </div>
+                </div>
+              </div>
+              <div class="zajno-card__data">
+                <div class="zajno-card__text">
+                  <h3 class="zajno-card__title" data-scramble>dot-man</h3>
+                  <p class="zajno-card__desc">Python CLI dotfile manager. Git branch-per-config workflow, automated
+                    secret redaction, and cross-platform symlink synchronization.</p>
+                  <div class="zajno-card__tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">CLI</span>
+                    <span class="tag">Git Automation</span>
+                  </div>
+                </div>
+                <div class="zajno-card__footer">
+                  <div class="zajno-card__action">
+                    <span>View on GitHub</span>
+                    <div class="zajno-card__arrow">
+                      <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338"
+                          stroke="currentColor" stroke-width="1.6" />
+                      </svg>
                     </div>
                   </div>
                 </div>
-                <div class="zajno-card__data">
-                  <div class="zajno-card__text">
-                    <h3 class="zajno-card__title" data-scramble>dot-man</h3>
-                    <p class="zajno-card__desc">Python CLI dotfile manager. Git branch-per-config workflow, automated
-                      secret redaction, and cross-platform symlink synchronization.</p>
-                    <div class="zajno-card__tags">
-                      <span class="tag">Python</span>
-                      <span class="tag">CLI</span>
-                      <span class="tag">Git Automation</span>
-                    </div>
-                  </div>
-                  <div class="zajno-card__footer">
-                    <div class="zajno-card__action">
-                      <span>View on GitHub</span>
-                      <div class="zajno-card__arrow">
-                        <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338"
-                            stroke="currentColor" stroke-width="1.6" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
+              </div>
+            </a>
 
-              <!-- Dev Project 07: Examination System -->
-              <a href="https://github.com/ZVAXEROWS" target="_blank" class="zajno-card" data-reveal data-cursor-hover>
-                <div class="zajno-card__visual">
-                  <div class="zajno-card__dev-canvas">
-                    <div class="zajno-card__dev-top">
-                      <span class="zajno-card__dev-num">07 / ENTERPRISE APP</span>
-                      <span class="zajno-card__dev-badge">JAVA OOP</span>
-                    </div>
-                    <div class="zajno-card__dev-hero">
-                      <div class="zajno-card__dev-tech">Exam Engine</div>
-                      <div class="zajno-card__dev-sub">Secure Testing Platform</div>
+            <!-- Dev Project 07: Examination System -->
+            <a href="https://github.com/ZVAXEROWS" target="_blank" class="zajno-card" data-reveal data-cursor-hover>
+              <div class="zajno-card__visual">
+                <div class="zajno-card__dev-canvas">
+                  <div class="zajno-card__dev-top">
+                    <span class="zajno-card__dev-num">07 / ENTERPRISE APP</span>
+                    <span class="zajno-card__dev-badge">JAVA OOP</span>
+                  </div>
+                  <div class="zajno-card__dev-hero">
+                    <div class="zajno-card__dev-tech">Exam Engine</div>
+                    <div class="zajno-card__dev-sub">Secure Testing Platform</div>
+                  </div>
+                </div>
+              </div>
+              <div class="zajno-card__data">
+                <div class="zajno-card__text">
+                  <h3 class="zajno-card__title" data-scramble>Examination System</h3>
+                  <p class="zajno-card__desc">Java OOP examination platform with encrypted question storage,
+                    role-based access control (Admin/Student), and automated evaluation.</p>
+                  <div class="zajno-card__tags">
+                    <span class="tag">Java</span>
+                    <span class="tag">OOP Design</span>
+                    <span class="tag">Encryption</span>
+                  </div>
+                </div>
+                <div class="zajno-card__footer">
+                  <div class="zajno-card__action">
+                    <span>View on GitHub</span>
+                    <div class="zajno-card__arrow">
+                      <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338"
+                          stroke="currentColor" stroke-width="1.6" />
+                      </svg>
                     </div>
                   </div>
                 </div>
-                <div class="zajno-card__data">
-                  <div class="zajno-card__text">
-                    <h3 class="zajno-card__title" data-scramble>Examination System</h3>
-                    <p class="zajno-card__desc">Java OOP examination platform with encrypted question storage,
-                      role-based access control (Admin/Student), and automated evaluation.</p>
-                    <div class="zajno-card__tags">
-                      <span class="tag">Java</span>
-                      <span class="tag">OOP Design</span>
-                      <span class="tag">Encryption</span>
-                    </div>
-                  </div>
-                  <div class="zajno-card__footer">
-                    <div class="zajno-card__action">
-                      <span>View on GitHub</span>
-                      <div class="zajno-card__arrow">
-                        <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338"
-                            stroke="currentColor" stroke-width="1.6" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
+              </div>
+            </a>
 
-              <!-- Dev Project 08: ConnectX Website -->
-              <a href="https://github.com/ZVAXEROWS" target="_blank" class="zajno-card" data-reveal data-cursor-hover>
-                <div class="zajno-card__visual">
-                  <div class="zajno-card__dev-canvas">
-                    <div class="zajno-card__dev-top">
-                      <span class="zajno-card__dev-num">08 / WEB PLATFORM</span>
-                      <span class="zajno-card__dev-badge">FRONTEND</span>
-                    </div>
-                    <div class="zajno-card__dev-hero">
-                      <div class="zajno-card__dev-tech">ConnectX Web</div>
-                      <div class="zajno-card__dev-sub">Student Tech Org Portal</div>
+            <!-- Dev Project 08: ConnectX Website -->
+            <a href="https://github.com/ZVAXEROWS" target="_blank" class="zajno-card" data-reveal data-cursor-hover>
+              <div class="zajno-card__visual">
+                <div class="zajno-card__dev-canvas">
+                  <div class="zajno-card__dev-top">
+                    <span class="zajno-card__dev-num">08 / WEB PLATFORM</span>
+                    <span class="zajno-card__dev-badge">FRONTEND</span>
+                  </div>
+                  <div class="zajno-card__dev-hero">
+                    <div class="zajno-card__dev-tech">ConnectX Web</div>
+                    <div class="zajno-card__dev-sub">Student Tech Org Portal</div>
+                  </div>
+                </div>
+              </div>
+              <div class="zajno-card__data">
+                <div class="zajno-card__text">
+                  <h3 class="zajno-card__title" data-scramble>ConnectX Website</h3>
+                  <p class="zajno-card__desc">Full-scale responsive portal for ConnectX student tech organization.
+                    Figma design system translated into responsive code.</p>
+                  <div class="zajno-card__tags">
+                    <span class="tag">HTML/CSS/JS</span>
+                    <span class="tag">Design System</span>
+                    <span class="tag">Responsive</span>
+                  </div>
+                </div>
+                <div class="zajno-card__footer">
+                  <div class="zajno-card__action">
+                    <span>View on GitHub</span>
+                    <div class="zajno-card__arrow">
+                      <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338"
+                          stroke="currentColor" stroke-width="1.6" />
+                      </svg>
                     </div>
                   </div>
                 </div>
-                <div class="zajno-card__data">
-                  <div class="zajno-card__text">
-                    <h3 class="zajno-card__title" data-scramble>ConnectX Website</h3>
-                    <p class="zajno-card__desc">Full-scale responsive portal for ConnectX student tech organization.
-                      Figma design system translated into responsive code.</p>
-                    <div class="zajno-card__tags">
-                      <span class="tag">HTML/CSS/JS</span>
-                      <span class="tag">Design System</span>
-                      <span class="tag">Responsive</span>
-                    </div>
-                  </div>
-                  <div class="zajno-card__footer">
-                    <div class="zajno-card__action">
-                      <span>View on GitHub</span>
-                      <div class="zajno-card__arrow">
-                        <svg width="100%" height="100%" viewBox="0 0 13 25" fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <path d="M0.5 12.1338H11.5M11.5 12.1338L8.15217 9.13379M11.5 12.1338L8.15217 15.1338"
-                            stroke="currentColor" stroke-width="1.6" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
+              </div>
+            </a>
 
-            </div>
           </div>
-
         </div>
-      </section>
+
+      </div>
+    </section>
 
     <!-- ── Slanted Inter-Section Connector (Projects to CV) ── -->
     <div class="section-connector section-connector--cv" aria-hidden="true">

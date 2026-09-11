@@ -445,21 +445,40 @@ section[data-theme] {
   background-color: var(--black);
 }
 
-.hero__grid-bg {
+.hero__bg-wrap {
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(245, 245, 242, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(245, 245, 242, 0.035) 1px, transparent 1px),
-    radial-gradient(circle at 85% 25%, rgba(110, 255, 15, 0.07) 0%, transparent 45%);
-  background-size: 40px 40px, 40px 40px, 100% 100%;
+  overflow: hidden;
   pointer-events: none;
   z-index: 0;
 }
 
+.hero__bg-gif {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 1;
+  filter: contrast(1.1) brightness(0.85);
+  display: block;
+}
+
+.hero__grid-bg {
+  position: absolute;
+  inset: 0;
+  /* background-image:
+    linear-gradient(rgba(245, 245, 242, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 245, 242, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 85% 25%, rgba(110, 255, 15, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(10, 10, 10, 0.25) 0%, rgba(10, 10, 10, 0.75) 100%); */
+  background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
 .hero__content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 /* Neo-Brutalist Status Badge */
